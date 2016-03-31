@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.500 ns
+From           : TEMPUP
+To             : TEMPERATURE_STORAGE[5]
+From Clock     : --
+To Clock       : TEMPUP
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.000 ns
+From           : FANSPEED_STORAGE[1]
+To             : FANSPEED[0]
+From Clock     : RESET
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.000 ns
+From           : FANDOWN
+To             : FANSPEED[0]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.000 ns
+From           : FANUP
+To             : FANSPEED_STORAGE[1]
+From Clock     : --
+To Clock       : RESET
+Failed Paths   : 0
+
+Type           : Clock Setup: 'TEMPUP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 52.63 MHz ( period = 19.000 ns )
+From           : TEMPERATURE_STORAGE[4]
+To             : TEMPERATURE_STORAGE[5]
+From Clock     : TEMPUP
+To Clock       : TEMPUP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'TEMPDOWN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 57.80 MHz ( period = 17.300 ns )
+From           : TEMPERATURE_STORAGE[4]
+To             : TEMPERATURE_STORAGE[5]
+From Clock     : TEMPDOWN
+To Clock       : TEMPDOWN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'FANDOWN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 64.94 MHz ( period = 15.400 ns )
+From           : FANSPEED_STORAGE[1]
+To             : FANSPEED_STORAGE[1]
+From Clock     : FANDOWN
+To Clock       : FANDOWN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'FANUP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 64.94 MHz ( period = 15.400 ns )
+From           : FANSPEED_STORAGE[1]
+To             : FANSPEED_STORAGE[1]
+From Clock     : FANUP
+To Clock       : FANUP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'RESET'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 64.94 MHz ( period = 15.400 ns )
+From           : FANSPEED_STORAGE[1]
+To             : FANSPEED_STORAGE[1]
+From Clock     : RESET
+To Clock       : RESET
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
