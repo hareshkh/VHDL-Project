@@ -24,9 +24,9 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 167424;
+		ZEND = 83704;
 		NUMERATOR = 661;
-		DENOMINATOR = 167424;
+		DENOMINATOR = 83704;
 		TOP_INDEX = 0;
 	}
 	CLOCK{

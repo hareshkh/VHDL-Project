@@ -36,14 +36,14 @@
  ------------------------------------------------------------------------------
 
 
-File Generation Date & Time: Thu Mar 31 16:24:50 2016
+File Generation Date & Time: Fri Apr 01 01:51:05 2016
 Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
 CHIP  "AC_REMOTE"  ASSIGNED TO AN: EPF10K10LC84-3
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-FANDOWN                      : 1         : input  : TTL               :         :           : N              
-TEMPUP                       : 2         : input  : TTL               :         :           : N              
+FANUP                        : 1         : input  : TTL               :         :           : N              
+TEMPDOWN                     : 2         : input  : TTL               :         :           : N              
 GND*                         : 3         :        :                   :         :           :                
 VCC_INT                      : 4         : power  :                   : 5.0V    :           :                
 GND*                         : 5         :        :                   :         :           :                
@@ -59,8 +59,8 @@ nCE                          : 14        : input  :                   :         
 TDI                          : 15        : input  :                   :         :           :                
 GND*                         : 16        :        :                   :         :           :                
 TEMPERATURE[2]               : 17        : output : TTL               :         :           : N              
-GND*                         : 18        :        :                   :         :           :                
-TEMPERATURE[1]               : 19        : output : TTL               :         :           : N              
+TEMPERATURE[1]               : 18        : output : TTL               :         :           : N              
+TEMPERATURE[4]               : 19        : output : TTL               :         :           : N              
 VCC_INT                      : 20        : power  :                   : 5.0V    :           :                
 GND*                         : 21        :        :                   :         :           :                
 GND*                         : 22        :        :                   :         :           :                
@@ -83,9 +83,9 @@ GND*                         : 38        :        :                   :         
 GND*                         : 39        :        :                   :         :           :                
 VCC_INT                      : 40        : power  :                   : 5.0V    :           :                
 GND_INT                      : 41        : gnd    :                   :         :           :                
-FANUP                        : 42        : input  : TTL               :         :           : N              
-GND+                         : 43        :        :                   :         :           :                
-TEMPDOWN                     : 44        : input  : TTL               :         :           : N              
+FANDOWN                      : 42        : input  : TTL               :         :           : N              
+CLOCK                        : 43        : input  : TTL               :         :           : N              
+TEMPUP                       : 44        : input  : TTL               :         :           : N              
 VCC_INT                      : 45        : power  :                   : 5.0V    :           :                
 GND_INT                      : 46        : gnd    :                   :         :           :                
 GND*                         : 47        :        :                   :         :           :                
@@ -101,18 +101,18 @@ TRST                         : 56        : input  :                   :         
 TMS                          : 57        : input  :                   :         :           :                
 GND*                         : 58        :        :                   :         :           :                
 GND*                         : 59        :        :                   :         :           :                
-FANSPEED[1]                  : 60        : output : TTL               :         :           : N              
+GND*                         : 60        :        :                   :         :           :                
 GND*                         : 61        :        :                   :         :           :                
-FANSPEED[0]                  : 62        : output : TTL               :         :           : N              
+GND*                         : 62        :        :                   :         :           :                
 VCC_INT                      : 63        : power  :                   : 5.0V    :           :                
 GND*                         : 64        :        :                   :         :           :                
 GND*                         : 65        :        :                   :         :           :                
-GND*                         : 66        :        :                   :         :           :                
-GND*                         : 67        :        :                   :         :           :                
+FANSPEED[0]                  : 66        : output : TTL               :         :           : N              
+FANSPEED[1]                  : 67        : output : TTL               :         :           : N              
 GND_INT                      : 68        : gnd    :                   :         :           :                
-TEMPERATURE[0]               : 69        : output : TTL               :         :           : N              
-TEMPERATURE[4]               : 70        : output : TTL               :         :           : N              
-TEMPERATURE[3]               : 71        : output : TTL               :         :           : N              
+TEMPERATURE[3]               : 69        : output : TTL               :         :           : N              
+TEMPERATURE[0]               : 70        : output : TTL               :         :           : N              
+TEMPERATURE[5]               : 71        : output : TTL               :         :           : N              
 GND*                         : 72        :        :                   :         :           :                
 GND*                         : 73        :        :                   :         :           :                
 TDO                          : 74        : output :                   :         :           :                
@@ -124,5 +124,5 @@ GND*                         : 79        :        :                   :         
 GND*                         : 80        :        :                   :         :           :                
 GND*                         : 81        :        :                   :         :           :                
 GND_INT                      : 82        : gnd    :                   :         :           :                
-TEMPERATURE[5]               : 83        : output : TTL               :         :           : N              
+GND*                         : 83        :        :                   :         :           :                
 RESET                        : 84        : input  : TTL               :         :           : N              

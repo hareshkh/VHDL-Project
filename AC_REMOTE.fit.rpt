@@ -1,5 +1,5 @@
 Fitter report for AC_REMOTE
-Thu Mar 31 16:24:50 2016
+Fri Apr 01 01:51:05 2016
 Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
 
 
@@ -14,21 +14,22 @@ Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
   6. Input Pins
   7. Output Pins
   8. All Package Pins
-  9. Global & Other Fast Signals
- 10. Carry Chains
- 11. Cascade Chains
- 12. Non-Global High Fan-Out Signals
- 13. LAB
- 14. Local Routing Interconnect
- 15. LAB External Interconnect
- 16. Row Interconnect
- 17. LAB Column Interconnect
+  9. Control Signals
+ 10. Global & Other Fast Signals
+ 11. Carry Chains
+ 12. Cascade Chains
+ 13. Non-Global High Fan-Out Signals
+ 14. LAB
+ 15. Local Routing Interconnect
+ 16. LAB External Interconnect
+ 17. Row Interconnect
  18. LAB Column Interconnect
- 19. Fitter Resource Usage Summary
- 20. Fitter Resource Utilization by Entity
- 21. Delay Chain Summary
- 22. Pin-Out File
- 23. Fitter Messages
+ 19. LAB Column Interconnect
+ 20. Fitter Resource Usage Summary
+ 21. Fitter Resource Utilization by Entity
+ 22. Delay Chain Summary
+ 23. Pin-Out File
+ 24. Fitter Messages
 
 
 
@@ -54,15 +55,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Thu Mar 31 16:24:50 2016        ;
+; Fitter Status         ; Successful - Fri Apr 01 01:51:05 2016        ;
 ; Quartus II Version    ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
 ; Revision Name         ; AC_REMOTE                                    ;
 ; Top-level Entity Name ; AC_REMOTE                                    ;
 ; Family                ; FLEX10K                                      ;
 ; Device                ; EPF10K10LC84-3                               ;
 ; Timing Models         ; Final                                        ;
-; Total logic elements  ; 22 / 576 ( 4 % )                             ;
-; Total pins            ; 13 / 59 ( 22 % )                             ;
+; Total logic elements  ; 297 / 576 ( 52 % )                           ;
+; Total pins            ; 14 / 59 ( 24 % )                             ;
 ; Total memory bits     ; 0 / 6,144 ( 0 % )                            ;
 +-----------------------+----------------------------------------------+
 
@@ -132,11 +133,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
 ; Name     ; Pin # ; Row ; Col. ; Fan-Out ; Global ; I/O Register ; Use Local Routing Input ; Power Up High ; Single-Pin CE ; I/O Standard ;
 +----------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
-; RESET    ; 84    ; --  ; --   ; 8       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
-; FANDOWN  ; 1     ; --  ; --   ; 1       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
-; FANUP    ; 42    ; --  ; --   ; 2       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
-; TEMPDOWN ; 44    ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
-; TEMPUP   ; 2     ; --  ; --   ; 6       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; RESET    ; 84    ; --  ; --   ; 73      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TEMPDOWN ; 2     ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TEMPUP   ; 44    ; --  ; --   ; 1       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; CLOCK    ; 43    ; --  ; --   ; 72      ; yes    ; no           ; no                      ; no            ; no            ; TTL          ;
+; FANDOWN  ; 42    ; --  ; --   ; 1       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; FANUP    ; 1     ; --  ; --   ; 1       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
 +----------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
 
 
@@ -145,14 +147,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
 ; Name           ; Pin # ; Row ; Col. ; I/O Register ; Use Local Routing Output ; Power Up High ; Slow Slew Rate ; Single-Pin OE ; Single-Pin CE ; Open Drain ; TRI Primitive ; I/O Standard ;
 +----------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
-; TEMPERATURE[0] ; 69    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; TEMPERATURE[1] ; 19    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; TEMPERATURE[0] ; 70    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; TEMPERATURE[1] ; 18    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
 ; TEMPERATURE[2] ; 17    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; TEMPERATURE[3] ; 71    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; TEMPERATURE[4] ; 70    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; TEMPERATURE[5] ; 83    ; --  ; 13   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; FANSPEED[0]    ; 62    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
-; FANSPEED[1]    ; 60    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; TEMPERATURE[3] ; 69    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; TEMPERATURE[4] ; 19    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; TEMPERATURE[5] ; 71    ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; FANSPEED[0]    ; 66    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; FANSPEED[1]    ; 67    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
 +----------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
 
 
@@ -161,8 +163,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+----------------+--------------+
 ; Pin # ; Usage          ; I/O Standard ;
 +-------+----------------+--------------+
-; 1     ; FANDOWN        ; TTL          ;
-; 2     ; TEMPUP         ; TTL          ;
+; 1     ; FANUP          ; TTL          ;
+; 2     ; TEMPDOWN       ; TTL          ;
 ; 3     ; GND*           ;              ;
 ; 4     ; VCC_INT        ;              ;
 ; 5     ; GND*           ;              ;
@@ -178,8 +180,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 15    ; #TDI           ;              ;
 ; 16    ; GND*           ;              ;
 ; 17    ; TEMPERATURE[2] ; TTL          ;
-; 18    ; GND*           ;              ;
-; 19    ; TEMPERATURE[1] ; TTL          ;
+; 18    ; TEMPERATURE[1] ; TTL          ;
+; 19    ; TEMPERATURE[4] ; TTL          ;
 ; 20    ; VCC_INT        ;              ;
 ; 21    ; GND*           ;              ;
 ; 22    ; GND*           ;              ;
@@ -202,9 +204,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 39    ; GND*           ;              ;
 ; 40    ; VCC_INT        ;              ;
 ; 41    ; GND_INT        ;              ;
-; 42    ; FANUP          ; TTL          ;
-; 43    ; GND+           ;              ;
-; 44    ; TEMPDOWN       ; TTL          ;
+; 42    ; FANDOWN        ; TTL          ;
+; 43    ; CLOCK          ; TTL          ;
+; 44    ; TEMPUP         ; TTL          ;
 ; 45    ; VCC_INT        ;              ;
 ; 46    ; GND_INT        ;              ;
 ; 47    ; GND*           ;              ;
@@ -220,18 +222,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 57    ; #TMS           ;              ;
 ; 58    ; GND*           ;              ;
 ; 59    ; GND*           ;              ;
-; 60    ; FANSPEED[1]    ; TTL          ;
+; 60    ; GND*           ;              ;
 ; 61    ; GND*           ;              ;
-; 62    ; FANSPEED[0]    ; TTL          ;
+; 62    ; GND*           ;              ;
 ; 63    ; VCC_INT        ;              ;
 ; 64    ; GND*           ;              ;
 ; 65    ; GND*           ;              ;
-; 66    ; GND*           ;              ;
-; 67    ; GND*           ;              ;
+; 66    ; FANSPEED[0]    ; TTL          ;
+; 67    ; FANSPEED[1]    ; TTL          ;
 ; 68    ; GND_INT        ;              ;
-; 69    ; TEMPERATURE[0] ; TTL          ;
-; 70    ; TEMPERATURE[4] ; TTL          ;
-; 71    ; TEMPERATURE[3] ; TTL          ;
+; 69    ; TEMPERATURE[3] ; TTL          ;
+; 70    ; TEMPERATURE[0] ; TTL          ;
+; 71    ; TEMPERATURE[5] ; TTL          ;
 ; 72    ; GND*           ;              ;
 ; 73    ; GND*           ;              ;
 ; 74    ; #TDO           ;              ;
@@ -243,9 +245,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 80    ; GND*           ;              ;
 ; 81    ; GND*           ;              ;
 ; 82    ; GND_INT        ;              ;
-; 83    ; TEMPERATURE[5] ; TTL          ;
+; 83    ; GND*           ;              ;
 ; 84    ; RESET          ; TTL          ;
 +-------+----------------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Control Signals                                                                  ;
++--------------------------------+---------+---------+--------------+--------------+
+; Name                           ; Pin #   ; Fan-Out ; Usage        ; Global Usage ;
++--------------------------------+---------+---------+--------------+--------------+
+; CLOCK                          ; 43      ; 72      ; Clock        ; Pin          ;
+; \CHANGE:FANSPEED_STORAGE[31]~3 ; LC1_B13 ; 30      ; Clock enable ; Non-global   ;
++--------------------------------+---------+---------+--------------+--------------+
 
 
 +-------------------------------------+
@@ -253,11 +265,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------+-------+---------+--------+
 ; Name     ; Pin # ; Fan-Out ; Global ;
 +----------+-------+---------+--------+
-; RESET    ; 84    ; 8       ; no     ;
-; FANDOWN  ; 1     ; 1       ; no     ;
-; FANUP    ; 42    ; 2       ; no     ;
-; TEMPDOWN ; 44    ; 3       ; no     ;
-; TEMPUP   ; 2     ; 6       ; no     ;
+; RESET    ; 84    ; 73      ; no     ;
+; TEMPDOWN ; 2     ; 3       ; no     ;
+; TEMPUP   ; 44    ; 1       ; no     ;
+; CLOCK    ; 43    ; 72      ; yes    ;
+; FANDOWN  ; 42    ; 1       ; no     ;
+; FANUP    ; 1     ; 1       ; no     ;
 +----------+-------+---------+--------+
 
 
@@ -266,13 +279,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------+------------------------+
 ; Carry Chain Length ; Number of Carry Chains ;
 +--------------------+------------------------+
-; 0                  ; 0                      ;
-; 1                  ; 0                      ;
-; 2                  ; 0                      ;
-; 3                  ; 0                      ;
-; 4                  ; 0                      ;
-; 5                  ; 0                      ;
-; 6                  ; 1                      ;
+; 0 - 2              ; 0                      ;
+; 3 - 5              ; 0                      ;
+; 6 - 8              ; 0                      ;
+; 9 - 11             ; 0                      ;
+; 12 - 14            ; 0                      ;
+; 15 - 17            ; 0                      ;
+; 18 - 20            ; 0                      ;
+; 21 - 23            ; 0                      ;
+; 24 - 26            ; 0                      ;
+; 27 - 29            ; 0                      ;
+; 30 - 32            ; 4                      ;
 +--------------------+------------------------+
 
 
@@ -281,43 +298,66 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------+-------+
 ; Length ; Count ;
 +--------+-------+
-; 2      ; 1     ;
+; 2      ; 2     ;
 +--------+-------+
 
 
-+------------------------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                                    ;
-+--------------------------------------------------------------------------+---------+
-; Name                                                                     ; Fan-Out ;
-+--------------------------------------------------------------------------+---------+
-; RESET                                                                    ; 8       ;
-; TEMPUP                                                                   ; 6       ;
-; TEMPERATURE_STORAGE[5]~43                                                ; 6       ;
-; TEMPERATURE_STORAGE[3]~40                                                ; 5       ;
-; TEMPERATURE_STORAGE[2]~39                                                ; 5       ;
-; TEMPERATURE_STORAGE[5]~42                                                ; 5       ;
-; TEMPERATURE_STORAGE[4]~41                                                ; 5       ;
-; FANSPEED_STORAGE[0]~11                                                   ; 4       ;
-; FANSPEED_STORAGE[1]~12                                                   ; 4       ;
-; CHANGE~13                                                                ; 4       ;
-; TEMPERATURE_STORAGE[1]~38                                                ; 4       ;
-; TEMPERATURE_STORAGE[0]~37                                                ; 4       ;
-; CHANGE~12                                                                ; 3       ;
-; TEMPDOWN                                                                 ; 3       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT ; 2       ;
-; FANSPEED_STORAGE[1]~10                                                   ; 2       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT ; 2       ;
-; FANUP                                                                    ; 2       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT ; 2       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT ; 2       ;
-; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT ; 2       ;
-; TEMPERATURE_STORAGE[5]~46                                                ; 1       ;
-; lpm_add_sub:Add2|addcore:adder|unreg_res_node[1]~2                       ; 1       ;
-; TEMPERATURE_STORAGE[5]~45                                                ; 1       ;
-; FANSPEED_STORAGE[1]~9                                                    ; 1       ;
-; lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]~6                       ; 1       ;
-; FANDOWN                                                                  ; 1       ;
-+--------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                     ;
++---------------------------------------------------------------------------+---------+
+; Name                                                                      ; Fan-Out ;
++---------------------------------------------------------------------------+---------+
+; RESET                                                                     ; 73      ;
+; CHANGE~37                                                                 ; 40      ;
+; CHANGE~47                                                                 ; 35      ;
+; CHANGE~38                                                                 ; 31      ;
+; \CHANGE:FANSPEED_STORAGE[31]~5                                            ; 30      ;
+; FANSPEED_STORAGE~212                                                      ; 30      ;
+; \CHANGE:TEMPERATURE_STORAGE[31]~1                                         ; 7       ;
+; lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT  ; 7       ;
+; \CHANGE:TEMPERATURE_STORAGE[5]~0                                          ; 5       ;
+; CHANGE~46                                                                 ; 5       ;
+; \CHANGE:TEMPERATURE_STORAGE[3]~0                                          ; 5       ;
+; lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~COUT  ; 5       ;
+; FANSPEED_STORAGE~204                                                      ; 5       ;
+; \CHANGE:FANSPEED_STORAGE[1]~0                                             ; 5       ;
+; \CHANGE:TEMPERATURE_STORAGE[4]~0                                          ; 5       ;
+; \CHANGE:TEMPERATURE_STORAGE[2]~0                                          ; 5       ;
+; \CHANGE:TEMPERATURE_STORAGE[1]~0                                          ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[6]~0                                          ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[25]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[23]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[16]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[27]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[28]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[26]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[15]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[13]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[30]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[29]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[12]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[11]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[14]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[18]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[17]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[24]~0                                         ; 4       ;
+; \CHANGE:FANSPEED_STORAGE[31]~4                                            ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[10]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[8]~0                                          ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[9]~0                                          ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[22]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[21]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[7]~0                                          ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[20]~0                                         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[19]~0                                         ; 4       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[15]~COUT ; 3       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~COUT  ; 3       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~COUT  ; 3       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~COUT  ; 3       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~COUT  ; 3       ;
+; lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~COUT  ; 3       ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]~COUT  ; 3       ;
++---------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------+
@@ -325,15 +365,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+----------------+
 ; Number of Logic Elements ; Number of LABs ;
 +--------------------------+----------------+
-; 0                        ; 68             ;
-; 1                        ; 1              ;
-; 2                        ; 0              ;
+; 0                        ; 26             ;
+; 1                        ; 3              ;
+; 2                        ; 4              ;
 ; 3                        ; 0              ;
-; 4                        ; 0              ;
-; 5                        ; 1              ;
-; 6                        ; 0              ;
-; 7                        ; 0              ;
-; 8                        ; 2              ;
+; 4                        ; 2              ;
+; 5                        ; 3              ;
+; 6                        ; 1              ;
+; 7                        ; 7              ;
+; 8                        ; 26             ;
 +--------------------------+----------------+
 
 
@@ -342,14 +382,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+----------------+
 ; Local Routing Interconnects ; Number of LABs ;
 +-----------------------------+----------------+
-; 0                           ; 68             ;
-; 1                           ; 1              ;
-; 2                           ; 0              ;
-; 3                           ; 1              ;
-; 4                           ; 0              ;
-; 5                           ; 1              ;
-; 6                           ; 0              ;
-; 7                           ; 1              ;
+; 0                           ; 45             ;
+; 1                           ; 3              ;
+; 2                           ; 2              ;
+; 3                           ; 3              ;
+; 4                           ; 6              ;
+; 5                           ; 3              ;
+; 6                           ; 6              ;
+; 7                           ; 4              ;
 +-----------------------------+----------------+
 
 
@@ -358,29 +398,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+----------------+
 ; LAB External Interconnects ; Number of LABs ;
 +----------------------------+----------------+
-; 0                          ; 68             ;
-; 1                          ; 0              ;
+; 0                          ; 26             ;
+; 1                          ; 1              ;
 ; 2                          ; 0              ;
 ; 3                          ; 1              ;
-; 4                          ; 0              ;
+; 4                          ; 2              ;
 ; 5                          ; 1              ;
-; 6                          ; 0              ;
-; 7                          ; 0              ;
-; 8                          ; 0              ;
-; 9                          ; 2              ;
+; 6                          ; 2              ;
+; 7                          ; 3              ;
+; 8                          ; 16             ;
+; 9                          ; 1              ;
+; 10                         ; 8              ;
+; 11                         ; 3              ;
+; 12                         ; 3              ;
+; 13                         ; 3              ;
+; 14                         ; 1              ;
+; 15                         ; 1              ;
 +----------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Row Interconnect                                                                        ;
-+-------+--------------------+-----------------------------+------------------------------+
-; Row   ; Interconnect Used  ; Left Half Interconnect Used ; Right Half Interconnect Used ;
-+-------+--------------------+-----------------------------+------------------------------+
-;  A    ;  2 / 96 ( 2 % )    ;  0 / 48 ( 0 % )             ;  11 / 48 ( 23 % )            ;
-;  B    ;  0 / 96 ( 0 % )    ;  0 / 48 ( 0 % )             ;  0 / 48 ( 0 % )              ;
-;  C    ;  0 / 96 ( 0 % )    ;  0 / 48 ( 0 % )             ;  2 / 48 ( 4 % )              ;
-; Total ;  2 / 288 ( < 1 % ) ;  0 / 144 ( 0 % )            ;  13 / 144 ( 9 % )            ;
-+-------+--------------------+-----------------------------+------------------------------+
++------------------------------------------------------------------------------------------+
+; Row Interconnect                                                                         ;
++-------+---------------------+-----------------------------+------------------------------+
+; Row   ; Interconnect Used   ; Left Half Interconnect Used ; Right Half Interconnect Used ;
++-------+---------------------+-----------------------------+------------------------------+
+;  A    ;  72 / 96 ( 75 % )   ;  22 / 48 ( 46 % )           ;  31 / 48 ( 65 % )            ;
+;  B    ;  79 / 96 ( 82 % )   ;  26 / 48 ( 54 % )           ;  22 / 48 ( 46 % )            ;
+;  C    ;  0 / 96 ( 0 % )     ;  0 / 48 ( 0 % )             ;  0 / 48 ( 0 % )              ;
+; Total ;  151 / 288 ( 52 % ) ;  48 / 144 ( 33 % )          ;  53 / 144 ( 37 % )           ;
++-------+---------------------+-----------------------------+------------------------------+
 
 
 +----------------------------+
@@ -400,9 +446,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 10    ;  0 / 24 ( 0 % )    ;
 ; 11    ;  0 / 24 ( 0 % )    ;
 ; 12    ;  0 / 24 ( 0 % )    ;
-; 13    ;  1 / 24 ( 4 % )    ;
-; 14    ;  0 / 24 ( 0 % )    ;
-; 15    ;  0 / 24 ( 0 % )    ;
+; 13    ;  0 / 24 ( 0 % )    ;
+; 14    ;  1 / 24 ( 4 % )    ;
+; 15    ;  1 / 24 ( 4 % )    ;
 ; 16    ;  0 / 24 ( 0 % )    ;
 ; 17    ;  0 / 24 ( 0 % )    ;
 ; 18    ;  0 / 24 ( 0 % )    ;
@@ -412,7 +458,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 22    ;  0 / 24 ( 0 % )    ;
 ; 23    ;  0 / 24 ( 0 % )    ;
 ; 24    ;  0 / 24 ( 0 % )    ;
-; Total ;  1 / 576 ( < 1 % ) ;
+; Total ;  2 / 576 ( < 1 % ) ;
 +-------+--------------------+
 
 
@@ -426,29 +472,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+-------------------+
 
 
-+-------------------------------------------------------+
-; Fitter Resource Usage Summary                         ;
-+-----------------------------------+-------------------+
-; Resource                          ; Usage             ;
-+-----------------------------------+-------------------+
-; Total logic elements              ; 22 / 576 ( 4 % )  ;
-; Registers                         ; 0 / 576 ( 0 % )   ;
-; Logic elements in carry chains    ; 6                 ;
-; User inserted logic elements      ; 0                 ;
-; I/O pins                          ; 13 / 59 ( 22 % )  ;
-;     -- Clock pins                 ; 2 / 2 ( 100 % )   ;
-;     -- Dedicated input pins       ; 5 / 4 ( 125 % )   ;
-; Global signals                    ; 0                 ;
-; EABs                              ; 0 / 3 ( 0 % )     ;
-; Total memory bits                 ; 0 / 6,144 ( 0 % ) ;
-; Total RAM block bits              ; 0 / 6,144 ( 0 % ) ;
-; Maximum fan-out node              ; RESET             ;
-; Maximum fan-out                   ; 8                 ;
-; Highest non-global fan-out signal ; RESET             ;
-; Highest non-global fan-out        ; 8                 ;
-; Total fan-out                     ; 86                ;
-; Average fan-out                   ; 2.46              ;
-+-----------------------------------+-------------------+
++--------------------------------------------------------+
+; Fitter Resource Usage Summary                          ;
++-----------------------------------+--------------------+
+; Resource                          ; Usage              ;
++-----------------------------------+--------------------+
+; Total logic elements              ; 297 / 576 ( 52 % ) ;
+; Registers                         ; 72 / 576 ( 13 % )  ;
+; Logic elements in carry chains    ; 128                ;
+; User inserted logic elements      ; 0                  ;
+; I/O pins                          ; 14 / 59 ( 24 % )   ;
+;     -- Clock pins                 ; 3 / 2 ( 150 % )    ;
+;     -- Dedicated input pins       ; 5 / 4 ( 125 % )    ;
+; Global signals                    ; 1                  ;
+; EABs                              ; 0 / 3 ( 0 % )      ;
+; Total memory bits                 ; 0 / 6,144 ( 0 % )  ;
+; Total RAM block bits              ; 0 / 6,144 ( 0 % )  ;
+; Maximum fan-out node              ; RESET              ;
+; Maximum fan-out                   ; 73                 ;
+; Highest non-global fan-out signal ; RESET              ;
+; Highest non-global fan-out        ; 73                 ;
+; Total fan-out                     ; 965                ;
+; Average fan-out                   ; 3.10               ;
++-----------------------------------+--------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -456,12 +502,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                               ; Library Name ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
-; |AC_REMOTE                         ; 22 (15)     ; 0            ; 0           ; 13   ; 22 (15)      ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |AC_REMOTE                                                        ; work         ;
-;    |lpm_add_sub:Add0|              ; 6 (0)       ; 0            ; 0           ; 0    ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0                                       ; work         ;
-;       |addcore:adder|              ; 6 (1)       ; 0            ; 0           ; 0    ; 6 (1)        ; 0 (0)             ; 0 (0)            ; 6 (1)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
-;    |lpm_add_sub:Add2|              ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2                                       ; work         ;
-;       |addcore:adder|              ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder                         ; work         ;
+; |AC_REMOTE                         ; 297 (171)   ; 72           ; 0           ; 14   ; 225 (99)     ; 1 (1)             ; 71 (71)          ; 128 (2)         ; 0 (0)      ; |AC_REMOTE                                                        ; work         ;
+;    |lpm_add_sub:Add0|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0                                       ; work         ;
+;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add1|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1                                       ; work         ;
+;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add2|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2                                       ; work         ;
+;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add3|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3                                       ; work         ;
+;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node ; work         ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -472,10 +525,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name           ; Pin Type ; Pad to Core ;
 +----------------+----------+-------------+
 ; RESET          ; Input    ; OFF         ;
-; FANDOWN        ; Input    ; OFF         ;
-; FANUP          ; Input    ; OFF         ;
 ; TEMPDOWN       ; Input    ; OFF         ;
 ; TEMPUP         ; Input    ; OFF         ;
+; CLOCK          ; Input    ; OFF         ;
+; FANDOWN        ; Input    ; OFF         ;
+; FANUP          ; Input    ; OFF         ;
 ; TEMPERATURE[0] ; Output   ; OFF         ;
 ; TEMPERATURE[1] ; Output   ; OFF         ;
 ; TEMPERATURE[2] ; Output   ; OFF         ;
@@ -499,7 +553,7 @@ The pin-out file can be found in C:/Users/Haresh/Desktop/AC Remote/AC_REMOTE.pin
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Mar 31 16:24:49 2016
+    Info: Processing started: Fri Apr 01 01:51:03 2016
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off AC_REMOTE -c AC_REMOTE
 Info: Automatically selected device EPF10K10LC84-3 for design AC_REMOTE
 Warning: Feature SignalProbe is not available with your current license
@@ -510,17 +564,17 @@ Info: Timing requirements not specified -- optimizing circuit to achieve the fol
     Info: Not setting a global tco requirement
     Info: Not setting a global tpd requirement
 Info: Inserted 0 logic cells in first fitting attempt
-Info: Started fitting attempt 1 on Thu Mar 31 2016 at 16:24:50
+Info: Started fitting attempt 1 on Fri Apr 01 2016 at 01:51:04
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
-Info: Fitter placement operations ending: elapsed time is 00:00:00
+Info: Fitter placement operations ending: elapsed time is 00:00:01
 Info: Fitter routing operations beginning
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: Quartus II Fitter was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 239 megabytes
-    Info: Processing ended: Thu Mar 31 16:24:50 2016
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Fri Apr 01 01:51:05 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

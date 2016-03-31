@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AC_REMOTE
-Thu Mar 31 16:24:49 2016
+Fri Apr 01 01:51:02 2016
 Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
 
 
@@ -12,13 +12,17 @@ Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. User-Specified and Inferred Latches
-  8. General Register Statistics
+  7. General Register Statistics
+  8. Inverted Register Statistics
   9. Source assignments for lpm_add_sub:Add0|addcore:adder
- 10. Source assignments for lpm_add_sub:Add2|addcore:adder
- 11. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
- 12. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
- 13. Analysis & Synthesis Messages
+ 10. Source assignments for lpm_add_sub:Add1|addcore:adder
+ 11. Source assignments for lpm_add_sub:Add2|addcore:adder
+ 12. Source assignments for lpm_add_sub:Add3|addcore:adder
+ 13. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
+ 16. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +48,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Mar 31 16:24:49 2016        ;
+; Analysis & Synthesis Status ; Successful - Fri Apr 01 01:51:02 2016        ;
 ; Quartus II Version          ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
 ; Revision Name               ; AC_REMOTE                                    ;
 ; Top-level Entity Name       ; AC_REMOTE                                    ;
 ; Family                      ; FLEX10K                                      ;
-; Total logic elements        ; 22                                           ;
-; Total pins                  ; 13                                           ;
+; Total logic elements        ; 297                                          ;
+; Total pins                  ; 14                                           ;
 ; Total memory bits           ; 0                                            ;
 +-----------------------------+----------------------------------------------+
 
@@ -142,20 +146,20 @@ applicable agreement for further details.
 +-----------------------------------+---------+
 ; Resource                          ; Usage   ;
 +-----------------------------------+---------+
-; Total logic elements              ; 22      ;
-; Total combinational functions     ; 22      ;
-;     -- Total 4-input functions    ; 12      ;
-;     -- Total 3-input functions    ; 5       ;
+; Total logic elements              ; 297     ;
+; Total combinational functions     ; 296     ;
+;     -- Total 4-input functions    ; 98      ;
+;     -- Total 3-input functions    ; 67      ;
 ;     -- Total 2-input functions    ; 4       ;
-;     -- Total 1-input functions    ; 1       ;
+;     -- Total 1-input functions    ; 127     ;
 ;     -- Total 0-input functions    ; 0       ;
-; Total registers                   ; 0       ;
-; Total logic cells in carry chains ; 6       ;
-; I/O pins                          ; 13      ;
+; Total registers                   ; 72      ;
+; Total logic cells in carry chains ; 128     ;
+; I/O pins                          ; 14      ;
 ; Maximum fan-out node              ; RESET   ;
-; Maximum fan-out                   ; 8       ;
-; Total fan-out                     ; 86      ;
-; Average fan-out                   ; 2.46    ;
+; Maximum fan-out                   ; 73      ;
+; Total fan-out                     ; 965     ;
+; Average fan-out                   ; 3.10    ;
 +-----------------------------------+---------+
 
 
@@ -164,32 +168,21 @@ applicable agreement for further details.
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                               ; Library Name ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
-; |AC_REMOTE                         ; 22 (15)     ; 0            ; 0           ; 13   ; 22 (15)      ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |AC_REMOTE                                                        ; work         ;
-;    |lpm_add_sub:Add0|              ; 6 (0)       ; 0            ; 0           ; 0    ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0                                       ; work         ;
-;       |addcore:adder|              ; 6 (1)       ; 0            ; 0           ; 0    ; 6 (1)        ; 0 (0)             ; 0 (0)            ; 6 (1)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
-;    |lpm_add_sub:Add2|              ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2                                       ; work         ;
-;       |addcore:adder|              ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder                         ; work         ;
+; |AC_REMOTE                         ; 297 (171)   ; 72           ; 0           ; 14   ; 225 (99)     ; 1 (1)             ; 71 (71)          ; 128 (2)         ; 0 (0)      ; |AC_REMOTE                                                        ; work         ;
+;    |lpm_add_sub:Add0|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0                                       ; work         ;
+;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add1|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1                                       ; work         ;
+;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add2|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2                                       ; work         ;
+;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add3|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3                                       ; work         ;
+;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node ; work         ;
 +------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                    ;
-+----------------------------------------------------+--------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal      ; Free of Timing Hazards ;
-+----------------------------------------------------+--------------------------+------------------------+
-; TEMPERATURE_STORAGE[0]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; TEMPERATURE_STORAGE[1]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; TEMPERATURE_STORAGE[2]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; TEMPERATURE_STORAGE[3]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; TEMPERATURE_STORAGE[4]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; TEMPERATURE_STORAGE[5]                             ; TEMPERATURE_STORAGE[5]~7 ; yes                    ;
-; FANSPEED_STORAGE[0]                                ; FANSPEED_STORAGE[1]~4    ; yes                    ;
-; FANSPEED_STORAGE[1]                                ; FANSPEED_STORAGE[1]~4    ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                          ;                        ;
-+----------------------------------------------------+--------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -197,18 +190,40 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 72    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; \CHANGE:TEMPERATURE_STORAGE[0]         ; 4       ;
+; \CHANGE:TEMPERATURE_STORAGE[31]        ; 7       ;
+; \CHANGE:FANSPEED_STORAGE[0]            ; 6       ;
+; \CHANGE:FANSPEED_STORAGE[31]           ; 4       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
 +-------------------------------------------------------+
 ; Source assignments for lpm_add_sub:Add0|addcore:adder ;
++---------------------------+-------+------+------------+
+; Assignment                ; Value ; From ; To         ;
++---------------------------+-------+------+------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
++---------------------------+-------+------+------------+
+
+
++-------------------------------------------------------+
+; Source assignments for lpm_add_sub:Add1|addcore:adder ;
 +---------------------------+-------+------+------------+
 ; Assignment                ; Value ; From ; To         ;
 +---------------------------+-------+------+------------+
@@ -225,14 +240,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------+-------+------+------------+
 
 
++-------------------------------------------------------+
+; Source assignments for lpm_add_sub:Add3|addcore:adder ;
++---------------------------+-------+------+------------+
+; Assignment                ; Value ; From ; To         ;
++---------------------------+-------+------+------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
++---------------------------+-------+------+------------+
+
+
 +-------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0 ;
 +------------------------+-------------+----------------------------+
 ; Parameter Name         ; Value       ; Type                       ;
 +------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 6           ; Untyped                    ;
+; LPM_WIDTH              ; 32          ; Untyped                    ;
 ; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; DEFAULT     ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
 ; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
 ; LPM_PIPELINE           ; 0           ; Untyped                    ;
 ; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
@@ -244,7 +268,35 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
 ; USE_WYS                ; OFF         ; Untyped                    ;
 ; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_1ii ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_soh ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 32          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_2eh ; Untyped                    ;
 ; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
 ; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
 ; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
@@ -258,9 +310,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+-------------+----------------------------+
 ; Parameter Name         ; Value       ; Type                       ;
 +------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 2           ; Untyped                    ;
+; LPM_WIDTH              ; 32          ; Untyped                    ;
 ; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; DEFAULT     ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
 ; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
 ; LPM_PIPELINE           ; 0           ; Untyped                    ;
 ; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
@@ -272,7 +324,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
 ; USE_WYS                ; OFF         ; Untyped                    ;
 ; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_thi ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_soh ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 32          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_2eh ; Untyped                    ;
 ; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
 ; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
 ; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
@@ -287,37 +367,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Mar 31 16:24:47 2016
+    Info: Processing started: Fri Apr 01 01:51:00 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AC_REMOTE -c AC_REMOTE
 Info: Found 2 design units, including 1 entities, in source file AC_REMOTE.vhd
     Info: Found design unit 1: AC_REMOTE-LOGIC
     Info: Found entity 1: AC_REMOTE
 Info: Elaborating entity "AC_REMOTE" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(40): signal "TEMPERATURE_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(41): signal "TEMPERATURE_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(42): signal "TEMPERATURE_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(43): signal "TEMPERATURE_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(47): signal "FANSPEED_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(48): signal "FANSPEED_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(49): signal "FANSPEED_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at AC_REMOTE.vhd(50): signal "FANSPEED_STORAGE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at AC_REMOTE.vhd(27): inferring latch(es) for signal or variable "TEMPERATURE_STORAGE", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at AC_REMOTE.vhd(27): inferring latch(es) for signal or variable "FANSPEED_STORAGE", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "FANSPEED_STORAGE[0]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "FANSPEED_STORAGE[1]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[0]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[1]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[2]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[3]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[4]" at AC_REMOTE.vhd(27)
-Info (10041): Inferred latch for "TEMPERATURE_STORAGE[5]" at AC_REMOTE.vhd(27)
-Info: Inferred 2 megafunctions from design logic
+Info: Inferred 4 megafunctions from design logic
     Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
     Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add2"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add3"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0"
 Info: Instantiated megafunction "lpm_add_sub:Add0" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "6"
-    Info: Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info: Parameter "LPM_WIDTH" = "32"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
     Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add0"
@@ -325,28 +389,21 @@ Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_cs
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
 Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add2"
-Info: Instantiated megafunction "lpm_add_sub:Add2" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "2"
-    Info: Parameter "LPM_DIRECTION" = "DEFAULT"
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add1"
+Info: Instantiated megafunction "lpm_add_sub:Add1" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "32"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
     Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add2|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info: Ignored 2 buffer(s)
-    Info: Ignored 2 SOFT buffer(s)
-Warning: Latch FANSPEED_STORAGE[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal FANSPEED_STORAGE[0]
-Info: Implemented 35 device resources after synthesis - the final resource count might be different
-    Info: Implemented 5 input pins
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add1"
+Info: Implemented 311 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
     Info: Implemented 8 output pins
-    Info: Implemented 22 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 256 megabytes
-    Info: Processing ended: Thu Mar 31 16:24:49 2016
+    Info: Implemented 297 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 260 megabytes
+    Info: Processing ended: Fri Apr 01 01:51:02 2016
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

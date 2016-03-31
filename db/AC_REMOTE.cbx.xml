@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="AC_REMOTE">
-		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_1ii.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_thi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_soh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_2eh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_soh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|AC_REMOTE|lpm_add_sub:Add3" CBX_FILE_NAME="add_sub_2eh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

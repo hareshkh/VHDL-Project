@@ -1,5 +1,5 @@
 Assembler report for AC_REMOTE
-Thu Mar 31 16:24:51 2016
+Fri Apr 01 01:51:06 2016
 Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Mar 31 16:24:51 2016 ;
+; Assembler Status      ; Successful - Fri Apr 01 01:51:06 2016 ;
 ; Revision Name         ; AC_REMOTE                             ;
 ; Top-level Entity Name ; AC_REMOTE                             ;
 ; Family                ; FLEX10K                               ;
@@ -91,7 +91,7 @@ applicable agreement for further details.
 +----------------+----------------------------------------------------------+
 ; Device         ; EPF10K10LC84-3                                           ;
 ; JTAG usercode  ; 0x0000007F                                               ;
-; Checksum       ; 0x00008473                                               ;
+; Checksum       ; 0x0002B86C                                               ;
 +----------------+----------------------------------------------------------+
 
 
@@ -102,7 +102,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------+
 ; Device             ; EPC2                                                 ;
 ; JTAG usercode      ; 0x00000000                                           ;
-; Checksum           ; 0x0301BC5F                                           ;
+; Checksum           ; 0x0303CBA4                                           ;
 ; Compression Ratio  ; 1                                                    ;
 +--------------------+------------------------------------------------------+
 
@@ -113,12 +113,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Mar 31 16:24:51 2016
+    Info: Processing started: Fri Apr 01 01:51:06 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off AC_REMOTE -c AC_REMOTE
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 206 megabytes
-    Info: Processing ended: Thu Mar 31 16:24:51 2016
+    Info: Peak virtual memory: 207 megabytes
+    Info: Processing ended: Fri Apr 01 01:51:06 2016
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
