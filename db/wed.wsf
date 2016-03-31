@@ -38,7 +38,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		INTERVAL_TYPE = HALF_GRID;
 	}
 	LINE{
-		SIGNAL = "FANDOWN";
+		SIGNAL = "CLOCK";
 		INDEX = 0;
 		FORMAT = E;
 		SCALE = 1;
@@ -46,7 +46,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "FANUP";
+		SIGNAL = "FANDOWN";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -78,7 +78,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPDOWN";
+		SIGNAL = "FANUP";
 		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
@@ -86,7 +86,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPUP";
+		SIGNAL = "RESET";
 		INDEX = 6;
 		FORMAT = E;
 		SCALE = 1;
@@ -94,23 +94,23 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE";
+		SIGNAL = "TEMPDOWN";
 		INDEX = 7;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "TEMPERATURE[4]";
-		INDEX = 8;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE[3]";
+		SIGNAL = "TEMPERATURE";
+		INDEX = 8;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TEMPERATURE[5]";
 		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
@@ -118,7 +118,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE[2]";
+		SIGNAL = "TEMPERATURE[4]";
 		INDEX = 10;
 		FORMAT = E;
 		SCALE = 1;
@@ -126,7 +126,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE[1]";
+		SIGNAL = "TEMPERATURE[3]";
 		INDEX = 11;
 		FORMAT = E;
 		SCALE = 1;
@@ -134,7 +134,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE[0]";
+		SIGNAL = "TEMPERATURE[2]";
 		INDEX = 12;
 		FORMAT = E;
 		SCALE = 1;
@@ -142,7 +142,7 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RESET";
+		SIGNAL = "TEMPERATURE[1]";
 		INDEX = 13;
 		FORMAT = E;
 		SCALE = 1;
@@ -150,8 +150,16 @@ VECTOR("C:/Users/Haresh/Desktop/AC Remote/db/AC_REMOTE.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "TEMPERATURE[5]";
+		SIGNAL = "TEMPERATURE[0]";
 		INDEX = 14;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "TEMPUP";
+		INDEX = 15;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
