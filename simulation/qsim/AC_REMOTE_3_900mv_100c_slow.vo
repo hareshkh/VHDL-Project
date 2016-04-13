@@ -1,0 +1,4458 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition"
+
+// DATE "04/13/2016 18:14:40"
+
+// 
+// Device: Altera EP2AGX45CU17I3 Package UFBGA358
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module AC_REMOTE (
+	TEMPERATURE,
+	FANSPEED,
+	CLOCK,
+	RESET,
+	TEMPUP,
+	TEMPDOWN,
+	FANUP,
+	FANDOWN);
+output 	[5:0] TEMPERATURE;
+output 	[1:0] FANSPEED;
+input 	CLOCK;
+input 	RESET;
+input 	TEMPUP;
+input 	TEMPDOWN;
+input 	FANUP;
+input 	FANDOWN;
+
+// Design Ports Information
+// TEMPERATURE[0]	=>  Location: PIN_M5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPERATURE[1]	=>  Location: PIN_N4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPERATURE[2]	=>  Location: PIN_L3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPERATURE[3]	=>  Location: PIN_P2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPERATURE[4]	=>  Location: PIN_L4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPERATURE[5]	=>  Location: PIN_R2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// FANSPEED[0]	=>  Location: PIN_R1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// FANSPEED[1]	=>  Location: PIN_P1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RESET	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPUP	=>  Location: PIN_T1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// TEMPDOWN	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLOCK	=>  Location: PIN_T10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// FANUP	=>  Location: PIN_M2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// FANDOWN	=>  Location: PIN_N1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("AC_REMOTE_3_900mv_100c_v_slow.sdo");
+// synopsys translate_on
+
+wire \TEMPERATURE[0]~output_o ;
+wire \TEMPERATURE[1]~output_o ;
+wire \TEMPERATURE[2]~output_o ;
+wire \TEMPERATURE[3]~output_o ;
+wire \TEMPERATURE[4]~output_o ;
+wire \TEMPERATURE[5]~output_o ;
+wire \FANSPEED[0]~output_o ;
+wire \FANSPEED[1]~output_o ;
+wire \CLOCK~input_o ;
+wire \CLOCK~inputclkctrl_outclk ;
+wire \TEMPERATURE_STORAGE[0]~8_combout ;
+wire \RESET~input_o ;
+wire \TEMPDOWN~input_o ;
+wire \TEMPUP~input_o ;
+wire \Add0~2 ;
+wire \Add0~5_sumout ;
+wire \TEMPERATURE_STORAGE~1_combout ;
+wire \Add0~6 ;
+wire \Add0~9_sumout ;
+wire \TEMPERATURE_STORAGE~2_combout ;
+wire \Add0~10 ;
+wire \Add0~14 ;
+wire \Add0~18 ;
+wire \Add0~21_sumout ;
+wire \TEMPERATURE_STORAGE~5_combout ;
+wire \Add0~22 ;
+wire \Add0~25_sumout ;
+wire \LessThan1~0_combout ;
+wire \LessThan1~1_combout ;
+wire \TEMPERATURE_STORAGE~7_combout ;
+wire \Add0~26 ;
+wire \Add0~29_sumout ;
+wire \Add0~30 ;
+wire \Add0~33_sumout ;
+wire \Add0~34 ;
+wire \Add0~37_sumout ;
+wire \Add0~38 ;
+wire \Add0~41_sumout ;
+wire \Add0~42 ;
+wire \Add0~45_sumout ;
+wire \Add0~46 ;
+wire \Add0~49_sumout ;
+wire \Add0~50 ;
+wire \Add0~53_sumout ;
+wire \Add0~54 ;
+wire \Add0~57_sumout ;
+wire \Add0~58 ;
+wire \Add0~61_sumout ;
+wire \Add0~62 ;
+wire \Add0~65_sumout ;
+wire \Add0~66 ;
+wire \Add0~69_sumout ;
+wire \Add0~70 ;
+wire \Add0~73_sumout ;
+wire \Add0~74 ;
+wire \Add0~77_sumout ;
+wire \Add0~78 ;
+wire \Add0~81_sumout ;
+wire \Add0~82 ;
+wire \Add0~85_sumout ;
+wire \Add0~86 ;
+wire \Add0~89_sumout ;
+wire \Add0~90 ;
+wire \Add0~93_sumout ;
+wire \Add0~94 ;
+wire \Add0~97_sumout ;
+wire \Add0~98 ;
+wire \Add0~101_sumout ;
+wire \Add0~102 ;
+wire \Add0~105_sumout ;
+wire \Add0~106 ;
+wire \Add0~109_sumout ;
+wire \Add0~110 ;
+wire \Add0~113_sumout ;
+wire \Add0~114 ;
+wire \Add0~117_sumout ;
+wire \LessThan0~4_combout ;
+wire \LessThan0~1_combout ;
+wire \LessThan0~2_combout ;
+wire \LessThan0~3_combout ;
+wire \LessThan0~5_combout ;
+wire \LessThan0~7DUPLICATE_combout ;
+wire \Add0~13_sumout ;
+wire \TEMPERATURE_STORAGE~3_combout ;
+wire \LessThan0~7_combout ;
+wire \Add0~17_sumout ;
+wire \TEMPERATURE_STORAGE~4_combout ;
+wire \LessThan0~0_combout ;
+wire \LessThan0~6_combout ;
+wire \Add0~118 ;
+wire \Add0~121_sumout ;
+wire \Add0~122 ;
+wire \Add0~125_sumout ;
+wire \TEMPERATURE_STORAGE~6_combout ;
+wire \FANSPEED_STORAGE~0_combout ;
+wire \Add0~1_sumout ;
+wire \TEMPERATURE_STORAGE~0_combout ;
+wire \TEMPERATURE[0]~reg0_q ;
+wire \TEMPERATURE[1]~reg0_q ;
+wire \TEMPERATURE[2]~reg0_q ;
+wire \TEMPERATURE[3]~reg0_q ;
+wire \TEMPERATURE[4]~reg0_q ;
+wire \TEMPERATURE[5]~reg0_q ;
+wire \FANSPEED_STORAGE[0]~9_combout ;
+wire \Add2~1_sumout ;
+wire \FANUP~input_o ;
+wire \Add2~2 ;
+wire \Add2~6 ;
+wire \Add2~9_sumout ;
+wire \FANSPEED_STORAGE~1_combout ;
+wire \process_0~0_combout ;
+wire \LessThan2~1_combout ;
+wire \LessThan2~4_combout ;
+wire \LessThan2~3_combout ;
+wire \LessThan2~2_combout ;
+wire \LessThan2~5_combout ;
+wire \FANSPEED_STORAGE~2_combout ;
+wire \FANSPEED_STORAGE[12]~8_combout ;
+wire \Add2~10 ;
+wire \Add2~13_sumout ;
+wire \Add2~14 ;
+wire \Add2~17_sumout ;
+wire \Add2~18 ;
+wire \Add2~21_sumout ;
+wire \Add2~22 ;
+wire \Add2~25_sumout ;
+wire \Add2~26 ;
+wire \Add2~29_sumout ;
+wire \Add2~30 ;
+wire \Add2~33_sumout ;
+wire \Add2~34 ;
+wire \Add2~37_sumout ;
+wire \Add2~38 ;
+wire \Add2~41_sumout ;
+wire \Add2~42 ;
+wire \Add2~45_sumout ;
+wire \Add2~46 ;
+wire \Add2~49_sumout ;
+wire \Add2~50 ;
+wire \Add2~53_sumout ;
+wire \Add2~54 ;
+wire \Add2~57_sumout ;
+wire \Add2~58 ;
+wire \Add2~61_sumout ;
+wire \Add2~62 ;
+wire \Add2~65_sumout ;
+wire \Add2~66 ;
+wire \Add2~69_sumout ;
+wire \Add2~70 ;
+wire \Add2~73_sumout ;
+wire \Add2~74 ;
+wire \Add2~77_sumout ;
+wire \Add2~78 ;
+wire \Add2~81_sumout ;
+wire \Add2~82 ;
+wire \Add2~85_sumout ;
+wire \Add2~86 ;
+wire \Add2~89_sumout ;
+wire \Add2~90 ;
+wire \Add2~93_sumout ;
+wire \Add2~94 ;
+wire \Add2~97_sumout ;
+wire \Add2~98 ;
+wire \Add2~101_sumout ;
+wire \Add2~102 ;
+wire \Add2~105_sumout ;
+wire \Add2~106 ;
+wire \Add2~109_sumout ;
+wire \Add2~110 ;
+wire \Add2~113_sumout ;
+wire \Add2~114 ;
+wire \Add2~117_sumout ;
+wire \LessThan2~0_combout ;
+wire \LessThan2~5DUPLICATE_combout ;
+wire \LessThan2~6_combout ;
+wire \LessThan2~7_combout ;
+wire \Add2~118 ;
+wire \Add2~122 ;
+wire \Add2~125_sumout ;
+wire \FANSPEED_STORAGE~7_combout ;
+wire \Add2~121_sumout ;
+wire \Add2~5_sumout ;
+wire \FANSPEED_STORAGE~6_combout ;
+wire \FANSPEED_STORAGE[1]~feeder_combout ;
+wire \FANDOWN~input_o ;
+wire \FANSPEED_STORAGE~3_combout ;
+wire \FANSPEED_STORAGE~4_combout ;
+wire \FANSPEED_STORAGE~5_combout ;
+wire \FANSPEED[0]~reg0_q ;
+wire \FANSPEED_STORAGE~6DUPLICATE_combout ;
+wire \FANSPEED[1]~reg0_q ;
+wire [31:0] TEMPERATURE_STORAGE;
+wire [31:0] FANSPEED_STORAGE;
+
+
+// Location: IOOBUF_X59_Y9_N33
+arriaii_io_obuf \TEMPERATURE[0]~output (
+	.i(\TEMPERATURE[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[0]~output .bus_hold = "false";
+defparam \TEMPERATURE[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y9_N98
+arriaii_io_obuf \TEMPERATURE[1]~output (
+	.i(\TEMPERATURE[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[1]~output .bus_hold = "false";
+defparam \TEMPERATURE[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y9_N67
+arriaii_io_obuf \TEMPERATURE[2]~output (
+	.i(\TEMPERATURE[2]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[2]~output .bus_hold = "false";
+defparam \TEMPERATURE[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y4_N36
+arriaii_io_obuf \TEMPERATURE[3]~output (
+	.i(\TEMPERATURE[3]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[3]~output .bus_hold = "false";
+defparam \TEMPERATURE[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y9_N5
+arriaii_io_obuf \TEMPERATURE[4]~output (
+	.i(\TEMPERATURE[4]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[4]~output .bus_hold = "false";
+defparam \TEMPERATURE[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y6_N36
+arriaii_io_obuf \TEMPERATURE[5]~output (
+	.i(\TEMPERATURE[5]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\TEMPERATURE[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \TEMPERATURE[5]~output .bus_hold = "false";
+defparam \TEMPERATURE[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y4_N98
+arriaii_io_obuf \FANSPEED[0]~output (
+	.i(\FANSPEED[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FANSPEED[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \FANSPEED[0]~output .bus_hold = "false";
+defparam \FANSPEED[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X59_Y4_N67
+arriaii_io_obuf \FANSPEED[1]~output (
+	.i(\FANSPEED[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\FANSPEED[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \FANSPEED[1]~output .bus_hold = "false";
+defparam \FANSPEED[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X26_Y0_N32
+arriaii_io_ibuf \CLOCK~input (
+	.i(CLOCK),
+	.ibar(gnd),
+	.o(\CLOCK~input_o ));
+// synopsys translate_off
+defparam \CLOCK~input .bus_hold = "false";
+defparam \CLOCK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G7
+arriaii_clkena \CLOCK~inputclkctrl (
+	.inclk(\CLOCK~input_o ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\CLOCK~inputclkctrl_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \CLOCK~inputclkctrl .clock_type = "global clock";
+defparam \CLOCK~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N26
+arriaii_lcell_comb \TEMPERATURE_STORAGE[0]~8 (
+// Equation(s):
+// \TEMPERATURE_STORAGE[0]~8_combout  = !\TEMPERATURE_STORAGE~0_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\TEMPERATURE_STORAGE~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE[0]~8_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[0]~8 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE[0]~8 .lut_mask = 64'hFF00FF00FF00FF00;
+defparam \TEMPERATURE_STORAGE[0]~8 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N27
+dffeas \TEMPERATURE_STORAGE[0] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\TEMPERATURE_STORAGE[0]~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[0] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X59_Y6_N63
+arriaii_io_ibuf \RESET~input (
+	.i(RESET),
+	.ibar(gnd),
+	.o(\RESET~input_o ));
+// synopsys translate_off
+defparam \RESET~input .bus_hold = "false";
+defparam \RESET~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X48_Y0_N94
+arriaii_io_ibuf \TEMPDOWN~input (
+	.i(TEMPDOWN),
+	.ibar(gnd),
+	.o(\TEMPDOWN~input_o ));
+// synopsys translate_off
+defparam \TEMPDOWN~input .bus_hold = "false";
+defparam \TEMPDOWN~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X59_Y6_N94
+arriaii_io_ibuf \TEMPUP~input (
+	.i(TEMPUP),
+	.ibar(gnd),
+	.o(\TEMPUP~input_o ));
+// synopsys translate_off
+defparam \TEMPUP~input .bus_hold = "false";
+defparam \TEMPUP~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N0
+arriaii_lcell_comb \Add0~1 (
+// Equation(s):
+// \Add0~1_sumout  = SUM(( !TEMPERATURE_STORAGE[0] ) + ( VCC ) + ( !VCC ))
+// \Add0~2  = CARRY(( !TEMPERATURE_STORAGE[0] ) + ( VCC ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!TEMPERATURE_STORAGE[0]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~1_sumout ),
+	.cout(\Add0~2 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~1 .extended_lut = "off";
+defparam \Add0~1 .lut_mask = 64'h000000000000FF00;
+defparam \Add0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N2
+arriaii_lcell_comb \Add0~5 (
+// Equation(s):
+// \Add0~5_sumout  = SUM(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[1] ) + ( \Add0~2  ))
+// \Add0~6  = CARRY(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[1] ) + ( \Add0~2  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!TEMPERATURE_STORAGE[31]),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!\TEMPUP~input_o ),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[1]),
+	.datag(gnd),
+	.cin(\Add0~2 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~5_sumout ),
+	.cout(\Add0~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~5 .extended_lut = "off";
+defparam \Add0~5 .lut_mask = 64'h0000FF000000FF31;
+defparam \Add0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N20
+arriaii_lcell_comb \TEMPERATURE_STORAGE~1 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~1_combout  = ( TEMPERATURE_STORAGE[1] & ( (!\RESET~input_o  & ((!\FANSPEED_STORAGE~0_combout ) # (\Add0~5_sumout ))) ) ) # ( !TEMPERATURE_STORAGE[1] & ( (\FANSPEED_STORAGE~0_combout  & (!\RESET~input_o  & \Add0~5_sumout )) ) )
+
+	.dataa(!\FANSPEED_STORAGE~0_combout ),
+	.datab(!\RESET~input_o ),
+	.datac(gnd),
+	.datad(!\Add0~5_sumout ),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~1 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~1 .lut_mask = 64'h0044004488CC88CC;
+defparam \TEMPERATURE_STORAGE~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N17
+dffeas \TEMPERATURE_STORAGE[1] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~1_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[1] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N4
+arriaii_lcell_comb \Add0~9 (
+// Equation(s):
+// \Add0~9_sumout  = SUM(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[2] ) + ( \Add0~6  ))
+// \Add0~10  = CARRY(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[2] ) + ( \Add0~6  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[31]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[2]),
+	.datag(gnd),
+	.cin(\Add0~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~9_sumout ),
+	.cout(\Add0~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~9 .extended_lut = "off";
+defparam \Add0~9 .lut_mask = 64'h0000FF000000CCFD;
+defparam \Add0~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N30
+arriaii_lcell_comb \TEMPERATURE_STORAGE~2 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~2_combout  = ( \Add0~9_sumout  & ( (!\RESET~input_o  & ((\FANSPEED_STORAGE~0_combout ) # (TEMPERATURE_STORAGE[2]))) ) ) # ( !\Add0~9_sumout  & ( (TEMPERATURE_STORAGE[2] & (!\RESET~input_o  & !\FANSPEED_STORAGE~0_combout )) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[2]),
+	.datab(gnd),
+	.datac(!\RESET~input_o ),
+	.datad(!\FANSPEED_STORAGE~0_combout ),
+	.datae(gnd),
+	.dataf(!\Add0~9_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~2 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~2 .lut_mask = 64'h5000500050F050F0;
+defparam \TEMPERATURE_STORAGE~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N39
+dffeas \TEMPERATURE_STORAGE[2] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~2_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[2] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N6
+arriaii_lcell_comb \Add0~13 (
+// Equation(s):
+// \Add0~13_sumout  = SUM(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[3] ) + ( \Add0~10  ))
+// \Add0~14  = CARRY(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[3] ) + ( \Add0~10  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[31]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[3]),
+	.datag(gnd),
+	.cin(\Add0~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~13_sumout ),
+	.cout(\Add0~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~13 .extended_lut = "off";
+defparam \Add0~13 .lut_mask = 64'h0000FF000000CCFD;
+defparam \Add0~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N8
+arriaii_lcell_comb \Add0~17 (
+// Equation(s):
+// \Add0~17_sumout  = SUM(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[4] ) + ( \Add0~14  ))
+// \Add0~18  = CARRY(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( TEMPERATURE_STORAGE[4] ) + ( \Add0~14  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[31]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[4]),
+	.datag(gnd),
+	.cin(\Add0~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~17_sumout ),
+	.cout(\Add0~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~17 .extended_lut = "off";
+defparam \Add0~17 .lut_mask = 64'h0000FF000000CCFD;
+defparam \Add0~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N10
+arriaii_lcell_comb \Add0~21 (
+// Equation(s):
+// \Add0~21_sumout  = SUM(( TEMPERATURE_STORAGE[5] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~18  ))
+// \Add0~22  = CARRY(( TEMPERATURE_STORAGE[5] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~18  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[5]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~21_sumout ),
+	.cout(\Add0~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~21 .extended_lut = "off";
+defparam \Add0~21 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y6_N34
+arriaii_lcell_comb \TEMPERATURE_STORAGE~5 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~5_combout  = ( \Add0~21_sumout  & ( \FANSPEED_STORAGE~0_combout  & ( !\RESET~input_o  ) ) ) # ( \Add0~21_sumout  & ( !\FANSPEED_STORAGE~0_combout  & ( (TEMPERATURE_STORAGE[5] & !\RESET~input_o ) ) ) ) # ( !\Add0~21_sumout  & ( 
+// !\FANSPEED_STORAGE~0_combout  & ( (TEMPERATURE_STORAGE[5] & !\RESET~input_o ) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[5]),
+	.datab(gnd),
+	.datac(!\RESET~input_o ),
+	.datad(gnd),
+	.datae(!\Add0~21_sumout ),
+	.dataf(!\FANSPEED_STORAGE~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~5 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~5 .lut_mask = 64'h505050500000F0F0;
+defparam \TEMPERATURE_STORAGE~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y6_N21
+dffeas \TEMPERATURE_STORAGE[5] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~5_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[5] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N12
+arriaii_lcell_comb \Add0~25 (
+// Equation(s):
+// \Add0~25_sumout  = SUM(( TEMPERATURE_STORAGE[6] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~22  ))
+// \Add0~26  = CARRY(( TEMPERATURE_STORAGE[6] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~22  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[6]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~25_sumout ),
+	.cout(\Add0~26 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~25 .extended_lut = "off";
+defparam \Add0~25 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N28
+arriaii_lcell_comb \LessThan1~0 (
+// Equation(s):
+// \LessThan1~0_combout  = ( TEMPERATURE_STORAGE[1] & ( TEMPERATURE_STORAGE[4] ) ) # ( !TEMPERATURE_STORAGE[1] & ( (TEMPERATURE_STORAGE[4] & (((!TEMPERATURE_STORAGE[0]) # (TEMPERATURE_STORAGE[3])) # (TEMPERATURE_STORAGE[2]))) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[2]),
+	.datab(!TEMPERATURE_STORAGE[4]),
+	.datac(!TEMPERATURE_STORAGE[0]),
+	.datad(!TEMPERATURE_STORAGE[3]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan1~0 .extended_lut = "off";
+defparam \LessThan1~0 .lut_mask = 64'h3133313333333333;
+defparam \LessThan1~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N0
+arriaii_lcell_comb \LessThan1~1 (
+// Equation(s):
+// \LessThan1~1_combout  = ( !\LessThan1~0_combout  & ( (\LessThan0~5_combout  & (!TEMPERATURE_STORAGE[30] & !TEMPERATURE_STORAGE[5])) ) )
+
+	.dataa(!\LessThan0~5_combout ),
+	.datab(!TEMPERATURE_STORAGE[30]),
+	.datac(!TEMPERATURE_STORAGE[5]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\LessThan1~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan1~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan1~1 .extended_lut = "off";
+defparam \LessThan1~1 .lut_mask = 64'h4040404000000000;
+defparam \LessThan1~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N34
+arriaii_lcell_comb \TEMPERATURE_STORAGE~7 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~7_combout  = ( \LessThan0~6_combout  & ( \LessThan1~1_combout  & ( (\RESET~input_o ) # (\TEMPUP~input_o ) ) ) ) # ( !\LessThan0~6_combout  & ( \LessThan1~1_combout  & ( ((!TEMPERATURE_STORAGE[31] & \TEMPUP~input_o )) # (\RESET~input_o 
+// ) ) ) ) # ( \LessThan0~6_combout  & ( !\LessThan1~1_combout  & ( (((TEMPERATURE_STORAGE[31] & \TEMPDOWN~input_o )) # (\RESET~input_o )) # (\TEMPUP~input_o ) ) ) ) # ( !\LessThan0~6_combout  & ( !\LessThan1~1_combout  & ( ((!TEMPERATURE_STORAGE[31] & 
+// (\TEMPUP~input_o )) # (TEMPERATURE_STORAGE[31] & ((\TEMPDOWN~input_o )))) # (\RESET~input_o ) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[31]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\RESET~input_o ),
+	.datad(!\TEMPDOWN~input_o ),
+	.datae(!\LessThan0~6_combout ),
+	.dataf(!\LessThan1~1_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~7 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~7 .lut_mask = 64'h2F7F3F7F2F2F3F3F;
+defparam \TEMPERATURE_STORAGE~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N13
+dffeas \TEMPERATURE_STORAGE[6] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~25_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[6] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N14
+arriaii_lcell_comb \Add0~29 (
+// Equation(s):
+// \Add0~29_sumout  = SUM(( TEMPERATURE_STORAGE[7] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~26  ))
+// \Add0~30  = CARRY(( TEMPERATURE_STORAGE[7] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~26  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[7]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~26 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~29_sumout ),
+	.cout(\Add0~30 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~29 .extended_lut = "off";
+defparam \Add0~29 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~29 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N15
+dffeas \TEMPERATURE_STORAGE[7] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~29_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[7] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N16
+arriaii_lcell_comb \Add0~33 (
+// Equation(s):
+// \Add0~33_sumout  = SUM(( TEMPERATURE_STORAGE[8] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~30  ))
+// \Add0~34  = CARRY(( TEMPERATURE_STORAGE[8] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~30  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[8]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~30 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~33_sumout ),
+	.cout(\Add0~34 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~33 .extended_lut = "off";
+defparam \Add0~33 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~33 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N17
+dffeas \TEMPERATURE_STORAGE[8] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~33_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[8] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N18
+arriaii_lcell_comb \Add0~37 (
+// Equation(s):
+// \Add0~37_sumout  = SUM(( TEMPERATURE_STORAGE[9] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~34  ))
+// \Add0~38  = CARRY(( TEMPERATURE_STORAGE[9] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~34  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[9]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~34 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~37_sumout ),
+	.cout(\Add0~38 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~37 .extended_lut = "off";
+defparam \Add0~37 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~37 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N19
+dffeas \TEMPERATURE_STORAGE[9] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~37_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[9] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N20
+arriaii_lcell_comb \Add0~41 (
+// Equation(s):
+// \Add0~41_sumout  = SUM(( TEMPERATURE_STORAGE[10] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~38  ))
+// \Add0~42  = CARRY(( TEMPERATURE_STORAGE[10] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~38  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[10]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~38 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~41_sumout ),
+	.cout(\Add0~42 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~41 .extended_lut = "off";
+defparam \Add0~41 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~41 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N21
+dffeas \TEMPERATURE_STORAGE[10] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~41_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[10] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N22
+arriaii_lcell_comb \Add0~45 (
+// Equation(s):
+// \Add0~45_sumout  = SUM(( TEMPERATURE_STORAGE[11] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~42  ))
+// \Add0~46  = CARRY(( TEMPERATURE_STORAGE[11] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~42  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[11]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~42 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~45_sumout ),
+	.cout(\Add0~46 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~45 .extended_lut = "off";
+defparam \Add0~45 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~45 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N23
+dffeas \TEMPERATURE_STORAGE[11] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~45_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[11] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N24
+arriaii_lcell_comb \Add0~49 (
+// Equation(s):
+// \Add0~49_sumout  = SUM(( TEMPERATURE_STORAGE[12] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~46  ))
+// \Add0~50  = CARRY(( TEMPERATURE_STORAGE[12] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~46  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[12]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~46 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~49_sumout ),
+	.cout(\Add0~50 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~49 .extended_lut = "off";
+defparam \Add0~49 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~49 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N25
+dffeas \TEMPERATURE_STORAGE[12] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~49_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[12] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N26
+arriaii_lcell_comb \Add0~53 (
+// Equation(s):
+// \Add0~53_sumout  = SUM(( TEMPERATURE_STORAGE[13] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~50  ))
+// \Add0~54  = CARRY(( TEMPERATURE_STORAGE[13] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~50  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[13]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~50 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~53_sumout ),
+	.cout(\Add0~54 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~53 .extended_lut = "off";
+defparam \Add0~53 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~53 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N27
+dffeas \TEMPERATURE_STORAGE[13] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~53_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[13] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N28
+arriaii_lcell_comb \Add0~57 (
+// Equation(s):
+// \Add0~57_sumout  = SUM(( TEMPERATURE_STORAGE[14] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~54  ))
+// \Add0~58  = CARRY(( TEMPERATURE_STORAGE[14] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~54  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[14]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~54 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~57_sumout ),
+	.cout(\Add0~58 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~57 .extended_lut = "off";
+defparam \Add0~57 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~57 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N29
+dffeas \TEMPERATURE_STORAGE[14] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~57_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[14] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N30
+arriaii_lcell_comb \Add0~61 (
+// Equation(s):
+// \Add0~61_sumout  = SUM(( TEMPERATURE_STORAGE[15] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~58  ))
+// \Add0~62  = CARRY(( TEMPERATURE_STORAGE[15] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~58  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[15]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~58 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~61_sumout ),
+	.cout(\Add0~62 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~61 .extended_lut = "off";
+defparam \Add0~61 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~61 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N31
+dffeas \TEMPERATURE_STORAGE[15] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~61_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[15] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N32
+arriaii_lcell_comb \Add0~65 (
+// Equation(s):
+// \Add0~65_sumout  = SUM(( TEMPERATURE_STORAGE[16] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~62  ))
+// \Add0~66  = CARRY(( TEMPERATURE_STORAGE[16] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~62  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[16]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~62 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~65_sumout ),
+	.cout(\Add0~66 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~65 .extended_lut = "off";
+defparam \Add0~65 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~65 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N33
+dffeas \TEMPERATURE_STORAGE[16] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~65_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[16] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N34
+arriaii_lcell_comb \Add0~69 (
+// Equation(s):
+// \Add0~69_sumout  = SUM(( TEMPERATURE_STORAGE[17] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~66  ))
+// \Add0~70  = CARRY(( TEMPERATURE_STORAGE[17] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~66  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[17]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~66 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~69_sumout ),
+	.cout(\Add0~70 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~69 .extended_lut = "off";
+defparam \Add0~69 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~69 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N35
+dffeas \TEMPERATURE_STORAGE[17] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~69_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[17] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N36
+arriaii_lcell_comb \Add0~73 (
+// Equation(s):
+// \Add0~73_sumout  = SUM(( TEMPERATURE_STORAGE[18] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~70  ))
+// \Add0~74  = CARRY(( TEMPERATURE_STORAGE[18] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~70  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[18]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~70 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~73_sumout ),
+	.cout(\Add0~74 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~73 .extended_lut = "off";
+defparam \Add0~73 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~73 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N37
+dffeas \TEMPERATURE_STORAGE[18] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~73_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[18]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[18] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[18] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y6_N38
+arriaii_lcell_comb \Add0~77 (
+// Equation(s):
+// \Add0~77_sumout  = SUM(( TEMPERATURE_STORAGE[19] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~74  ))
+// \Add0~78  = CARRY(( TEMPERATURE_STORAGE[19] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~74  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[19]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~74 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~77_sumout ),
+	.cout(\Add0~78 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~77 .extended_lut = "off";
+defparam \Add0~77 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~77 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y6_N39
+dffeas \TEMPERATURE_STORAGE[19] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~77_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[19]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[19] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[19] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N0
+arriaii_lcell_comb \Add0~81 (
+// Equation(s):
+// \Add0~81_sumout  = SUM(( TEMPERATURE_STORAGE[20] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~78  ))
+// \Add0~82  = CARRY(( TEMPERATURE_STORAGE[20] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~78  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[20]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~78 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~81_sumout ),
+	.cout(\Add0~82 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~81 .extended_lut = "off";
+defparam \Add0~81 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~81 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N1
+dffeas \TEMPERATURE_STORAGE[20] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~81_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[20]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[20] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[20] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N2
+arriaii_lcell_comb \Add0~85 (
+// Equation(s):
+// \Add0~85_sumout  = SUM(( TEMPERATURE_STORAGE[21] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~82  ))
+// \Add0~86  = CARRY(( TEMPERATURE_STORAGE[21] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~82  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[21]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~82 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~85_sumout ),
+	.cout(\Add0~86 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~85 .extended_lut = "off";
+defparam \Add0~85 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~85 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N3
+dffeas \TEMPERATURE_STORAGE[21] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~85_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[21]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[21] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[21] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N4
+arriaii_lcell_comb \Add0~89 (
+// Equation(s):
+// \Add0~89_sumout  = SUM(( TEMPERATURE_STORAGE[22] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~86  ))
+// \Add0~90  = CARRY(( TEMPERATURE_STORAGE[22] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~86  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[22]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~86 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~89_sumout ),
+	.cout(\Add0~90 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~89 .extended_lut = "off";
+defparam \Add0~89 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~89 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N5
+dffeas \TEMPERATURE_STORAGE[22] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~89_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[22]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[22] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[22] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N6
+arriaii_lcell_comb \Add0~93 (
+// Equation(s):
+// \Add0~93_sumout  = SUM(( TEMPERATURE_STORAGE[23] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~90  ))
+// \Add0~94  = CARRY(( TEMPERATURE_STORAGE[23] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~90  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[23]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~90 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~93_sumout ),
+	.cout(\Add0~94 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~93 .extended_lut = "off";
+defparam \Add0~93 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~93 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N7
+dffeas \TEMPERATURE_STORAGE[23] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~93_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[23]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[23] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[23] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N8
+arriaii_lcell_comb \Add0~97 (
+// Equation(s):
+// \Add0~97_sumout  = SUM(( TEMPERATURE_STORAGE[24] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~94  ))
+// \Add0~98  = CARRY(( TEMPERATURE_STORAGE[24] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~94  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[24]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~94 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~97_sumout ),
+	.cout(\Add0~98 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~97 .extended_lut = "off";
+defparam \Add0~97 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~97 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N9
+dffeas \TEMPERATURE_STORAGE[24] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~97_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[24]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[24] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[24] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N10
+arriaii_lcell_comb \Add0~101 (
+// Equation(s):
+// \Add0~101_sumout  = SUM(( TEMPERATURE_STORAGE[25] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~98  ))
+// \Add0~102  = CARRY(( TEMPERATURE_STORAGE[25] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~98  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[25]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~98 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~101_sumout ),
+	.cout(\Add0~102 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~101 .extended_lut = "off";
+defparam \Add0~101 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~101 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N11
+dffeas \TEMPERATURE_STORAGE[25] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~101_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[25]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[25] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[25] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N12
+arriaii_lcell_comb \Add0~105 (
+// Equation(s):
+// \Add0~105_sumout  = SUM(( TEMPERATURE_STORAGE[26] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~102  ))
+// \Add0~106  = CARRY(( TEMPERATURE_STORAGE[26] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~102  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[26]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~102 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~105_sumout ),
+	.cout(\Add0~106 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~105 .extended_lut = "off";
+defparam \Add0~105 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~105 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N13
+dffeas \TEMPERATURE_STORAGE[26] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~105_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[26]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[26] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[26] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N14
+arriaii_lcell_comb \Add0~109 (
+// Equation(s):
+// \Add0~109_sumout  = SUM(( TEMPERATURE_STORAGE[27] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~106  ))
+// \Add0~110  = CARRY(( TEMPERATURE_STORAGE[27] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~106  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[27]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~106 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~109_sumout ),
+	.cout(\Add0~110 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~109 .extended_lut = "off";
+defparam \Add0~109 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~109 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N15
+dffeas \TEMPERATURE_STORAGE[27] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~109_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[27]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[27] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[27] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N16
+arriaii_lcell_comb \Add0~113 (
+// Equation(s):
+// \Add0~113_sumout  = SUM(( TEMPERATURE_STORAGE[28] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~110  ))
+// \Add0~114  = CARRY(( TEMPERATURE_STORAGE[28] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~110  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7_combout ),
+	.datad(!TEMPERATURE_STORAGE[28]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~110 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~113_sumout ),
+	.cout(\Add0~114 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~113 .extended_lut = "off";
+defparam \Add0~113 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~113 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N17
+dffeas \TEMPERATURE_STORAGE[28] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~113_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[28]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[28] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[28] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N18
+arriaii_lcell_comb \Add0~117 (
+// Equation(s):
+// \Add0~117_sumout  = SUM(( TEMPERATURE_STORAGE[29] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~114  ))
+// \Add0~118  = CARRY(( TEMPERATURE_STORAGE[29] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( \Add0~114  ))
+
+	.dataa(!TEMPERATURE_STORAGE[30]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~7DUPLICATE_combout ),
+	.datad(!TEMPERATURE_STORAGE[29]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add0~114 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~117_sumout ),
+	.cout(\Add0~118 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~117 .extended_lut = "off";
+defparam \Add0~117 .lut_mask = 64'h00003302000000FF;
+defparam \Add0~117 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N19
+dffeas \TEMPERATURE_STORAGE[29] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~117_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[29]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[29] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[29] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N38
+arriaii_lcell_comb \LessThan0~4 (
+// Equation(s):
+// \LessThan0~4_combout  = ( !TEMPERATURE_STORAGE[8] & ( !TEMPERATURE_STORAGE[7] & ( (!TEMPERATURE_STORAGE[29] & (!TEMPERATURE_STORAGE[28] & !TEMPERATURE_STORAGE[14])) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[29]),
+	.datab(gnd),
+	.datac(!TEMPERATURE_STORAGE[28]),
+	.datad(!TEMPERATURE_STORAGE[14]),
+	.datae(!TEMPERATURE_STORAGE[8]),
+	.dataf(!TEMPERATURE_STORAGE[7]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~4 .extended_lut = "off";
+defparam \LessThan0~4 .lut_mask = 64'hA000000000000000;
+defparam \LessThan0~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N34
+arriaii_lcell_comb \LessThan0~1 (
+// Equation(s):
+// \LessThan0~1_combout  = ( !TEMPERATURE_STORAGE[17] & ( !TEMPERATURE_STORAGE[18] & ( (!TEMPERATURE_STORAGE[22] & (!TEMPERATURE_STORAGE[21] & (!TEMPERATURE_STORAGE[19] & !TEMPERATURE_STORAGE[20]))) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[22]),
+	.datab(!TEMPERATURE_STORAGE[21]),
+	.datac(!TEMPERATURE_STORAGE[19]),
+	.datad(!TEMPERATURE_STORAGE[20]),
+	.datae(!TEMPERATURE_STORAGE[17]),
+	.dataf(!TEMPERATURE_STORAGE[18]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~1 .extended_lut = "off";
+defparam \LessThan0~1 .lut_mask = 64'h8000000000000000;
+defparam \LessThan0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y6_N24
+arriaii_lcell_comb \LessThan0~2 (
+// Equation(s):
+// \LessThan0~2_combout  = ( !TEMPERATURE_STORAGE[12] & ( !TEMPERATURE_STORAGE[15] & ( (!TEMPERATURE_STORAGE[10] & (!TEMPERATURE_STORAGE[11] & (!TEMPERATURE_STORAGE[13] & !TEMPERATURE_STORAGE[16]))) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[10]),
+	.datab(!TEMPERATURE_STORAGE[11]),
+	.datac(!TEMPERATURE_STORAGE[13]),
+	.datad(!TEMPERATURE_STORAGE[16]),
+	.datae(!TEMPERATURE_STORAGE[12]),
+	.dataf(!TEMPERATURE_STORAGE[15]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~2 .extended_lut = "off";
+defparam \LessThan0~2 .lut_mask = 64'h8000000000000000;
+defparam \LessThan0~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N6
+arriaii_lcell_comb \LessThan0~3 (
+// Equation(s):
+// \LessThan0~3_combout  = ( !TEMPERATURE_STORAGE[6] & ( !TEMPERATURE_STORAGE[26] & ( (!TEMPERATURE_STORAGE[24] & (!TEMPERATURE_STORAGE[23] & !TEMPERATURE_STORAGE[25])) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[24]),
+	.datab(gnd),
+	.datac(!TEMPERATURE_STORAGE[23]),
+	.datad(!TEMPERATURE_STORAGE[25]),
+	.datae(!TEMPERATURE_STORAGE[6]),
+	.dataf(!TEMPERATURE_STORAGE[26]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~3 .extended_lut = "off";
+defparam \LessThan0~3 .lut_mask = 64'hA000000000000000;
+defparam \LessThan0~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N24
+arriaii_lcell_comb \LessThan0~5 (
+// Equation(s):
+// \LessThan0~5_combout  = ( \LessThan0~2_combout  & ( \LessThan0~3_combout  & ( (!TEMPERATURE_STORAGE[9] & (!TEMPERATURE_STORAGE[27] & (\LessThan0~4_combout  & \LessThan0~1_combout ))) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[9]),
+	.datab(!TEMPERATURE_STORAGE[27]),
+	.datac(!\LessThan0~4_combout ),
+	.datad(!\LessThan0~1_combout ),
+	.datae(!\LessThan0~2_combout ),
+	.dataf(!\LessThan0~3_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~5 .extended_lut = "off";
+defparam \LessThan0~5 .lut_mask = 64'h0000000000000008;
+defparam \LessThan0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N30
+arriaii_lcell_comb \LessThan0~7DUPLICATE (
+// Equation(s):
+// \LessThan0~7DUPLICATE_combout  = ( TEMPERATURE_STORAGE[5] & ( \LessThan0~5_combout  & ( (!TEMPERATURE_STORAGE[3] & (!TEMPERATURE_STORAGE[4] & !TEMPERATURE_STORAGE[2])) ) ) ) # ( !TEMPERATURE_STORAGE[5] & ( \LessThan0~5_combout  ) )
+
+	.dataa(!TEMPERATURE_STORAGE[3]),
+	.datab(gnd),
+	.datac(!TEMPERATURE_STORAGE[4]),
+	.datad(!TEMPERATURE_STORAGE[2]),
+	.datae(!TEMPERATURE_STORAGE[5]),
+	.dataf(!\LessThan0~5_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~7DUPLICATE_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~7DUPLICATE .extended_lut = "off";
+defparam \LessThan0~7DUPLICATE .lut_mask = 64'h00000000FFFFA000;
+defparam \LessThan0~7DUPLICATE .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N18
+arriaii_lcell_comb \TEMPERATURE_STORAGE~3 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~3_combout  = ( \Add0~13_sumout  & ( ((\FANSPEED_STORAGE~0_combout ) # (TEMPERATURE_STORAGE[3])) # (\RESET~input_o ) ) ) # ( !\Add0~13_sumout  & ( ((TEMPERATURE_STORAGE[3] & !\FANSPEED_STORAGE~0_combout )) # (\RESET~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(!\RESET~input_o ),
+	.datac(!TEMPERATURE_STORAGE[3]),
+	.datad(!\FANSPEED_STORAGE~0_combout ),
+	.datae(!\Add0~13_sumout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~3 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~3 .lut_mask = 64'h3F333FFF3F333FFF;
+defparam \TEMPERATURE_STORAGE~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N33
+dffeas \TEMPERATURE_STORAGE[3] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~3_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[3] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N28
+arriaii_lcell_comb \LessThan0~7 (
+// Equation(s):
+// \LessThan0~7_combout  = ( TEMPERATURE_STORAGE[5] & ( \LessThan0~5_combout  & ( (!TEMPERATURE_STORAGE[3] & (!TEMPERATURE_STORAGE[2] & !TEMPERATURE_STORAGE[4])) ) ) ) # ( !TEMPERATURE_STORAGE[5] & ( \LessThan0~5_combout  ) )
+
+	.dataa(!TEMPERATURE_STORAGE[3]),
+	.datab(gnd),
+	.datac(!TEMPERATURE_STORAGE[2]),
+	.datad(!TEMPERATURE_STORAGE[4]),
+	.datae(!TEMPERATURE_STORAGE[5]),
+	.dataf(!\LessThan0~5_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~7 .extended_lut = "off";
+defparam \LessThan0~7 .lut_mask = 64'h00000000FFFFA000;
+defparam \LessThan0~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N8
+arriaii_lcell_comb \TEMPERATURE_STORAGE~4 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~4_combout  = ( \Add0~17_sumout  & ( ((\RESET~input_o ) # (\FANSPEED_STORAGE~0_combout )) # (TEMPERATURE_STORAGE[4]) ) ) # ( !\Add0~17_sumout  & ( ((TEMPERATURE_STORAGE[4] & !\FANSPEED_STORAGE~0_combout )) # (\RESET~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(!TEMPERATURE_STORAGE[4]),
+	.datac(!\FANSPEED_STORAGE~0_combout ),
+	.datad(!\RESET~input_o ),
+	.datae(!\Add0~17_sumout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~4 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~4 .lut_mask = 64'h30FF3FFF30FF3FFF;
+defparam \TEMPERATURE_STORAGE~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N25
+dffeas \TEMPERATURE_STORAGE[4] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[4] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N36
+arriaii_lcell_comb \LessThan0~0 (
+// Equation(s):
+// \LessThan0~0_combout  = ( TEMPERATURE_STORAGE[2] & ( TEMPERATURE_STORAGE[5] ) ) # ( !TEMPERATURE_STORAGE[2] & ( (TEMPERATURE_STORAGE[5] & ((TEMPERATURE_STORAGE[3]) # (TEMPERATURE_STORAGE[4]))) ) )
+
+	.dataa(gnd),
+	.datab(!TEMPERATURE_STORAGE[4]),
+	.datac(!TEMPERATURE_STORAGE[5]),
+	.datad(!TEMPERATURE_STORAGE[3]),
+	.datae(gnd),
+	.dataf(!TEMPERATURE_STORAGE[2]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~0 .extended_lut = "off";
+defparam \LessThan0~0 .lut_mask = 64'h030F030F0F0F0F0F;
+defparam \LessThan0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N2
+arriaii_lcell_comb \LessThan0~6 (
+// Equation(s):
+// \LessThan0~6_combout  = ( \LessThan0~5_combout  & ( (!TEMPERATURE_STORAGE[30] & !\LessThan0~0_combout ) ) )
+
+	.dataa(gnd),
+	.datab(!TEMPERATURE_STORAGE[30]),
+	.datac(!\LessThan0~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\LessThan0~5_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan0~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan0~6 .extended_lut = "off";
+defparam \LessThan0~6 .lut_mask = 64'h00000000C0C0C0C0;
+defparam \LessThan0~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N20
+arriaii_lcell_comb \Add0~121 (
+// Equation(s):
+// \Add0~121_sumout  = SUM(( TEMPERATURE_STORAGE[30] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & !\LessThan0~6_combout )) ) + ( \Add0~118  ))
+// \Add0~122  = CARRY(( TEMPERATURE_STORAGE[30] ) + ( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & !\LessThan0~6_combout )) ) + ( \Add0~118  ))
+
+	.dataa(!TEMPERATURE_STORAGE[31]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!\LessThan0~6_combout ),
+	.datad(!TEMPERATURE_STORAGE[30]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\Add0~118 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~121_sumout ),
+	.cout(\Add0~122 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~121 .extended_lut = "off";
+defparam \Add0~121 .lut_mask = 64'h00002323000000FF;
+defparam \Add0~121 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X52_Y5_N21
+dffeas \TEMPERATURE_STORAGE[30] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add0~121_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\TEMPERATURE_STORAGE~7_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[30]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[30] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[30] .power_up = "low";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y5_N22
+arriaii_lcell_comb \Add0~125 (
+// Equation(s):
+// \Add0~125_sumout  = SUM(( (!\TEMPUP~input_o ) # ((TEMPERATURE_STORAGE[31] & ((!\LessThan0~7DUPLICATE_combout ) # (TEMPERATURE_STORAGE[30])))) ) + ( !TEMPERATURE_STORAGE[31] ) + ( \Add0~122  ))
+
+	.dataa(!TEMPERATURE_STORAGE[31]),
+	.datab(!\TEMPUP~input_o ),
+	.datac(!TEMPERATURE_STORAGE[30]),
+	.datad(!\LessThan0~7DUPLICATE_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\Add0~122 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~125_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~125 .extended_lut = "off";
+defparam \Add0~125 .lut_mask = 64'h000055550000DDCD;
+defparam \Add0~125 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N22
+arriaii_lcell_comb \TEMPERATURE_STORAGE~6 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~6_combout  = ((!\FANSPEED_STORAGE~0_combout  & ((TEMPERATURE_STORAGE[31]))) # (\FANSPEED_STORAGE~0_combout  & (!\Add0~125_sumout ))) # (\RESET~input_o )
+
+	.dataa(!\FANSPEED_STORAGE~0_combout ),
+	.datab(!\RESET~input_o ),
+	.datac(!\Add0~125_sumout ),
+	.datad(!TEMPERATURE_STORAGE[31]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~6 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~6 .lut_mask = 64'h73FB73FB73FB73FB;
+defparam \TEMPERATURE_STORAGE~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N23
+dffeas \TEMPERATURE_STORAGE[31] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\TEMPERATURE_STORAGE~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(TEMPERATURE_STORAGE[31]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE[31] .is_wysiwyg = "true";
+defparam \TEMPERATURE_STORAGE[31] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N12
+arriaii_lcell_comb \FANSPEED_STORAGE~0 (
+// Equation(s):
+// \FANSPEED_STORAGE~0_combout  = ( \LessThan0~6_combout  & ( \LessThan1~1_combout  & ( \TEMPUP~input_o  ) ) ) # ( !\LessThan0~6_combout  & ( \LessThan1~1_combout  & ( (\TEMPUP~input_o  & !TEMPERATURE_STORAGE[31]) ) ) ) # ( \LessThan0~6_combout  & ( 
+// !\LessThan1~1_combout  & ( ((\TEMPDOWN~input_o  & TEMPERATURE_STORAGE[31])) # (\TEMPUP~input_o ) ) ) ) # ( !\LessThan0~6_combout  & ( !\LessThan1~1_combout  & ( (!TEMPERATURE_STORAGE[31] & ((\TEMPUP~input_o ))) # (TEMPERATURE_STORAGE[31] & 
+// (\TEMPDOWN~input_o )) ) ) )
+
+	.dataa(!\TEMPDOWN~input_o ),
+	.datab(!\TEMPUP~input_o ),
+	.datac(gnd),
+	.datad(!TEMPERATURE_STORAGE[31]),
+	.datae(!\LessThan0~6_combout ),
+	.dataf(!\LessThan1~1_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~0 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~0 .lut_mask = 64'h3355337733003333;
+defparam \FANSPEED_STORAGE~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y5_N24
+arriaii_lcell_comb \TEMPERATURE_STORAGE~0 (
+// Equation(s):
+// \TEMPERATURE_STORAGE~0_combout  = ( \Add0~1_sumout  & ( (!TEMPERATURE_STORAGE[0]) # ((\FANSPEED_STORAGE~0_combout ) # (\RESET~input_o )) ) ) # ( !\Add0~1_sumout  & ( ((!TEMPERATURE_STORAGE[0] & !\FANSPEED_STORAGE~0_combout )) # (\RESET~input_o ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[0]),
+	.datab(!\RESET~input_o ),
+	.datac(!\FANSPEED_STORAGE~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\Add0~1_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\TEMPERATURE_STORAGE~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \TEMPERATURE_STORAGE~0 .extended_lut = "off";
+defparam \TEMPERATURE_STORAGE~0 .lut_mask = 64'hB3B3B3B3BFBFBFBF;
+defparam \TEMPERATURE_STORAGE~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N9
+dffeas \TEMPERATURE[0]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~0_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[0]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N11
+dffeas \TEMPERATURE[1]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~1_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[1]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N37
+dffeas \TEMPERATURE[2]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~2_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[2]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[2]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[2]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N19
+dffeas \TEMPERATURE[3]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\TEMPERATURE_STORAGE~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[3]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[3]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[3]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X53_Y5_N15
+dffeas \TEMPERATURE[4]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\TEMPERATURE_STORAGE~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[4]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[4]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[4]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X53_Y6_N35
+dffeas \TEMPERATURE[5]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\TEMPERATURE_STORAGE~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\TEMPERATURE[5]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \TEMPERATURE[5]~reg0 .is_wysiwyg = "true";
+defparam \TEMPERATURE[5]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N34
+arriaii_lcell_comb \FANSPEED_STORAGE[0]~9 (
+// Equation(s):
+// \FANSPEED_STORAGE[0]~9_combout  = ( !\FANSPEED_STORAGE~5_combout  )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\FANSPEED_STORAGE~5_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE[0]~9_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[0]~9 .extended_lut = "off";
+defparam \FANSPEED_STORAGE[0]~9 .lut_mask = 64'hFFFFFFFF00000000;
+defparam \FANSPEED_STORAGE[0]~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y5_N35
+dffeas \FANSPEED_STORAGE[0] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\FANSPEED_STORAGE[0]~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[0] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N0
+arriaii_lcell_comb \Add2~1 (
+// Equation(s):
+// \Add2~1_sumout  = SUM(( VCC ) + ( !FANSPEED_STORAGE[0] ) + ( !VCC ))
+// \Add2~2  = CARRY(( VCC ) + ( !FANSPEED_STORAGE[0] ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~1_sumout ),
+	.cout(\Add2~2 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~1 .extended_lut = "off";
+defparam \Add2~1 .lut_mask = 64'h000000FF0000FFFF;
+defparam \Add2~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X59_Y6_N1
+arriaii_io_ibuf \FANUP~input (
+	.i(FANUP),
+	.ibar(gnd),
+	.o(\FANUP~input_o ));
+// synopsys translate_off
+defparam \FANUP~input .bus_hold = "false";
+defparam \FANUP~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N2
+arriaii_lcell_comb \Add2~5 (
+// Equation(s):
+// \Add2~5_sumout  = SUM(( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( FANSPEED_STORAGE[1] ) + ( \Add2~2  ))
+// \Add2~6  = CARRY(( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( FANSPEED_STORAGE[1] ) + ( \Add2~2  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!FANSPEED_STORAGE[31]),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!\FANUP~input_o ),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[1]),
+	.datag(gnd),
+	.cin(\Add2~2 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~5_sumout ),
+	.cout(\Add2~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~5 .extended_lut = "off";
+defparam \Add2~5 .lut_mask = 64'h0000FF000000FF31;
+defparam \Add2~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N4
+arriaii_lcell_comb \Add2~9 (
+// Equation(s):
+// \Add2~9_sumout  = SUM(( FANSPEED_STORAGE[2] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~6  ))
+// \Add2~10  = CARRY(( FANSPEED_STORAGE[2] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~6  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[2]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~9_sumout ),
+	.cout(\Add2~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~9 .extended_lut = "off";
+defparam \Add2~9 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N20
+arriaii_lcell_comb \FANSPEED_STORAGE~1 (
+// Equation(s):
+// \FANSPEED_STORAGE~1_combout  = ( \LessThan0~5_combout  & ( TEMPERATURE_STORAGE[31] & ( (\TEMPUP~input_o  & (!\LessThan0~0_combout  & !TEMPERATURE_STORAGE[30])) ) ) ) # ( \LessThan0~5_combout  & ( !TEMPERATURE_STORAGE[31] & ( \TEMPUP~input_o  ) ) ) # ( 
+// !\LessThan0~5_combout  & ( !TEMPERATURE_STORAGE[31] & ( \TEMPUP~input_o  ) ) )
+
+	.dataa(!\TEMPUP~input_o ),
+	.datab(gnd),
+	.datac(!\LessThan0~0_combout ),
+	.datad(!TEMPERATURE_STORAGE[30]),
+	.datae(!\LessThan0~5_combout ),
+	.dataf(!TEMPERATURE_STORAGE[31]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~1 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~1 .lut_mask = 64'h5555555500005000;
+defparam \FANSPEED_STORAGE~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N0
+arriaii_lcell_comb \process_0~0 (
+// Equation(s):
+// \process_0~0_combout  = ( \LessThan0~5_combout  & ( \LessThan1~0_combout  & ( (TEMPERATURE_STORAGE[31] & \TEMPDOWN~input_o ) ) ) ) # ( !\LessThan0~5_combout  & ( \LessThan1~0_combout  & ( (TEMPERATURE_STORAGE[31] & \TEMPDOWN~input_o ) ) ) ) # ( 
+// \LessThan0~5_combout  & ( !\LessThan1~0_combout  & ( (TEMPERATURE_STORAGE[31] & (\TEMPDOWN~input_o  & ((TEMPERATURE_STORAGE[30]) # (TEMPERATURE_STORAGE[5])))) ) ) ) # ( !\LessThan0~5_combout  & ( !\LessThan1~0_combout  & ( (TEMPERATURE_STORAGE[31] & 
+// \TEMPDOWN~input_o ) ) ) )
+
+	.dataa(!TEMPERATURE_STORAGE[31]),
+	.datab(!\TEMPDOWN~input_o ),
+	.datac(!TEMPERATURE_STORAGE[5]),
+	.datad(!TEMPERATURE_STORAGE[30]),
+	.datae(!\LessThan0~5_combout ),
+	.dataf(!\LessThan1~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\process_0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \process_0~0 .extended_lut = "off";
+defparam \process_0~0 .lut_mask = 64'h1111011111111111;
+defparam \process_0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X49_Y7_N32
+arriaii_lcell_comb \LessThan2~1 (
+// Equation(s):
+// \LessThan2~1_combout  = ( !FANSPEED_STORAGE[23] & ( !FANSPEED_STORAGE[22] & ( (!FANSPEED_STORAGE[21] & (!FANSPEED_STORAGE[24] & (!FANSPEED_STORAGE[20] & !FANSPEED_STORAGE[25]))) ) ) )
+
+	.dataa(!FANSPEED_STORAGE[21]),
+	.datab(!FANSPEED_STORAGE[24]),
+	.datac(!FANSPEED_STORAGE[20]),
+	.datad(!FANSPEED_STORAGE[25]),
+	.datae(!FANSPEED_STORAGE[23]),
+	.dataf(!FANSPEED_STORAGE[22]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~1 .extended_lut = "off";
+defparam \LessThan2~1 .lut_mask = 64'h8000000000000000;
+defparam \LessThan2~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X49_Y8_N38
+arriaii_lcell_comb \LessThan2~4 (
+// Equation(s):
+// \LessThan2~4_combout  = ( !FANSPEED_STORAGE[13] & ( !FANSPEED_STORAGE[3] & ( (!FANSPEED_STORAGE[14] & (!FANSPEED_STORAGE[4] & !FANSPEED_STORAGE[2])) ) ) )
+
+	.dataa(gnd),
+	.datab(!FANSPEED_STORAGE[14]),
+	.datac(!FANSPEED_STORAGE[4]),
+	.datad(!FANSPEED_STORAGE[2]),
+	.datae(!FANSPEED_STORAGE[13]),
+	.dataf(!FANSPEED_STORAGE[3]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~4 .extended_lut = "off";
+defparam \LessThan2~4 .lut_mask = 64'hC000000000000000;
+defparam \LessThan2~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X49_Y8_N10
+arriaii_lcell_comb \LessThan2~3 (
+// Equation(s):
+// \LessThan2~3_combout  = ( !FANSPEED_STORAGE[15] & ( !FANSPEED_STORAGE[17] & ( (!FANSPEED_STORAGE[18] & (!FANSPEED_STORAGE[19] & (!FANSPEED_STORAGE[12] & !FANSPEED_STORAGE[16]))) ) ) )
+
+	.dataa(!FANSPEED_STORAGE[18]),
+	.datab(!FANSPEED_STORAGE[19]),
+	.datac(!FANSPEED_STORAGE[12]),
+	.datad(!FANSPEED_STORAGE[16]),
+	.datae(!FANSPEED_STORAGE[15]),
+	.dataf(!FANSPEED_STORAGE[17]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~3 .extended_lut = "off";
+defparam \LessThan2~3 .lut_mask = 64'h8000000000000000;
+defparam \LessThan2~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N24
+arriaii_lcell_comb \LessThan2~2 (
+// Equation(s):
+// \LessThan2~2_combout  = ( !FANSPEED_STORAGE[10] & ( !FANSPEED_STORAGE[11] & ( (!FANSPEED_STORAGE[7] & (!FANSPEED_STORAGE[8] & (!FANSPEED_STORAGE[9] & !FANSPEED_STORAGE[6]))) ) ) )
+
+	.dataa(!FANSPEED_STORAGE[7]),
+	.datab(!FANSPEED_STORAGE[8]),
+	.datac(!FANSPEED_STORAGE[9]),
+	.datad(!FANSPEED_STORAGE[6]),
+	.datae(!FANSPEED_STORAGE[10]),
+	.dataf(!FANSPEED_STORAGE[11]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~2 .extended_lut = "off";
+defparam \LessThan2~2 .lut_mask = 64'h8000000000000000;
+defparam \LessThan2~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N36
+arriaii_lcell_comb \LessThan2~5 (
+// Equation(s):
+// \LessThan2~5_combout  = ( \LessThan2~3_combout  & ( \LessThan2~2_combout  & ( (\LessThan2~0_combout  & (!FANSPEED_STORAGE[5] & (\LessThan2~1_combout  & \LessThan2~4_combout ))) ) ) )
+
+	.dataa(!\LessThan2~0_combout ),
+	.datab(!FANSPEED_STORAGE[5]),
+	.datac(!\LessThan2~1_combout ),
+	.datad(!\LessThan2~4_combout ),
+	.datae(!\LessThan2~3_combout ),
+	.dataf(!\LessThan2~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~5 .extended_lut = "off";
+defparam \LessThan2~5 .lut_mask = 64'h0000000000000004;
+defparam \LessThan2~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N10
+arriaii_lcell_comb \FANSPEED_STORAGE~2 (
+// Equation(s):
+// \FANSPEED_STORAGE~2_combout  = ( \LessThan2~5_combout  & ( FANSPEED_STORAGE[31] & ( ((FANSPEED_STORAGE[1] & !FANSPEED_STORAGE[0])) # (FANSPEED_STORAGE[30]) ) ) ) # ( !\LessThan2~5_combout  & ( FANSPEED_STORAGE[31] ) )
+
+	.dataa(!FANSPEED_STORAGE[1]),
+	.datab(gnd),
+	.datac(!FANSPEED_STORAGE[0]),
+	.datad(!FANSPEED_STORAGE[30]),
+	.datae(!\LessThan2~5_combout ),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~2 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~2 .lut_mask = 64'h00000000FFFF50FF;
+defparam \FANSPEED_STORAGE~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N30
+arriaii_lcell_comb \FANSPEED_STORAGE[12]~8 (
+// Equation(s):
+// \FANSPEED_STORAGE[12]~8_combout  = ( \process_0~0_combout  & ( \FANSPEED_STORAGE~2_combout  & ( \RESET~input_o  ) ) ) # ( !\process_0~0_combout  & ( \FANSPEED_STORAGE~2_combout  & ( ((\FANSPEED_STORAGE~3_combout  & !\FANSPEED_STORAGE~1_combout )) # 
+// (\RESET~input_o ) ) ) ) # ( \process_0~0_combout  & ( !\FANSPEED_STORAGE~2_combout  & ( \RESET~input_o  ) ) ) # ( !\process_0~0_combout  & ( !\FANSPEED_STORAGE~2_combout  & ( ((!\FANSPEED_STORAGE~1_combout  & ((\FANSPEED_STORAGE~3_combout ) # 
+// (\FANUP~input_o )))) # (\RESET~input_o ) ) ) )
+
+	.dataa(!\RESET~input_o ),
+	.datab(!\FANUP~input_o ),
+	.datac(!\FANSPEED_STORAGE~3_combout ),
+	.datad(!\FANSPEED_STORAGE~1_combout ),
+	.datae(!\process_0~0_combout ),
+	.dataf(!\FANSPEED_STORAGE~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE[12]~8_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[12]~8 .extended_lut = "off";
+defparam \FANSPEED_STORAGE[12]~8 .lut_mask = 64'h7F5555555F555555;
+defparam \FANSPEED_STORAGE[12]~8 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N5
+dffeas \FANSPEED_STORAGE[2] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~9_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[2] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N6
+arriaii_lcell_comb \Add2~13 (
+// Equation(s):
+// \Add2~13_sumout  = SUM(( FANSPEED_STORAGE[3] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~10  ))
+// \Add2~14  = CARRY(( FANSPEED_STORAGE[3] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~10  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[3]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~13_sumout ),
+	.cout(\Add2~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~13 .extended_lut = "off";
+defparam \Add2~13 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N7
+dffeas \FANSPEED_STORAGE[3] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~13_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[3] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N8
+arriaii_lcell_comb \Add2~17 (
+// Equation(s):
+// \Add2~17_sumout  = SUM(( FANSPEED_STORAGE[4] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~14  ))
+// \Add2~18  = CARRY(( FANSPEED_STORAGE[4] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~14  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[4]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~17_sumout ),
+	.cout(\Add2~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~17 .extended_lut = "off";
+defparam \Add2~17 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N9
+dffeas \FANSPEED_STORAGE[4] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~17_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[4] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N10
+arriaii_lcell_comb \Add2~21 (
+// Equation(s):
+// \Add2~21_sumout  = SUM(( FANSPEED_STORAGE[5] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~18  ))
+// \Add2~22  = CARRY(( FANSPEED_STORAGE[5] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~18  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[5]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~21_sumout ),
+	.cout(\Add2~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~21 .extended_lut = "off";
+defparam \Add2~21 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N11
+dffeas \FANSPEED_STORAGE[5] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~21_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[5] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N12
+arriaii_lcell_comb \Add2~25 (
+// Equation(s):
+// \Add2~25_sumout  = SUM(( FANSPEED_STORAGE[6] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~22  ))
+// \Add2~26  = CARRY(( FANSPEED_STORAGE[6] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~22  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[6]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~25_sumout ),
+	.cout(\Add2~26 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~25 .extended_lut = "off";
+defparam \Add2~25 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~25 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N13
+dffeas \FANSPEED_STORAGE[6] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~25_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[6] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N14
+arriaii_lcell_comb \Add2~29 (
+// Equation(s):
+// \Add2~29_sumout  = SUM(( FANSPEED_STORAGE[7] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~26  ))
+// \Add2~30  = CARRY(( FANSPEED_STORAGE[7] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~26  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[7]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~26 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~29_sumout ),
+	.cout(\Add2~30 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~29 .extended_lut = "off";
+defparam \Add2~29 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~29 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N15
+dffeas \FANSPEED_STORAGE[7] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~29_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[7] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N16
+arriaii_lcell_comb \Add2~33 (
+// Equation(s):
+// \Add2~33_sumout  = SUM(( FANSPEED_STORAGE[8] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~30  ))
+// \Add2~34  = CARRY(( FANSPEED_STORAGE[8] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~30  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[8]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~30 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~33_sumout ),
+	.cout(\Add2~34 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~33 .extended_lut = "off";
+defparam \Add2~33 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~33 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N17
+dffeas \FANSPEED_STORAGE[8] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~33_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[8] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N18
+arriaii_lcell_comb \Add2~37 (
+// Equation(s):
+// \Add2~37_sumout  = SUM(( FANSPEED_STORAGE[9] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~34  ))
+// \Add2~38  = CARRY(( FANSPEED_STORAGE[9] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~34  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[9]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~34 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~37_sumout ),
+	.cout(\Add2~38 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~37 .extended_lut = "off";
+defparam \Add2~37 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~37 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N19
+dffeas \FANSPEED_STORAGE[9] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~37_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[9] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N20
+arriaii_lcell_comb \Add2~41 (
+// Equation(s):
+// \Add2~41_sumout  = SUM(( FANSPEED_STORAGE[10] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~38  ))
+// \Add2~42  = CARRY(( FANSPEED_STORAGE[10] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~38  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[10]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~38 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~41_sumout ),
+	.cout(\Add2~42 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~41 .extended_lut = "off";
+defparam \Add2~41 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~41 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N21
+dffeas \FANSPEED_STORAGE[10] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~41_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[10] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N22
+arriaii_lcell_comb \Add2~45 (
+// Equation(s):
+// \Add2~45_sumout  = SUM(( FANSPEED_STORAGE[11] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~42  ))
+// \Add2~46  = CARRY(( FANSPEED_STORAGE[11] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~42  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[11]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~42 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~45_sumout ),
+	.cout(\Add2~46 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~45 .extended_lut = "off";
+defparam \Add2~45 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~45 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N23
+dffeas \FANSPEED_STORAGE[11] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~45_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[11] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N24
+arriaii_lcell_comb \Add2~49 (
+// Equation(s):
+// \Add2~49_sumout  = SUM(( FANSPEED_STORAGE[12] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~46  ))
+// \Add2~50  = CARRY(( FANSPEED_STORAGE[12] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~46  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[12]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~46 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~49_sumout ),
+	.cout(\Add2~50 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~49 .extended_lut = "off";
+defparam \Add2~49 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~49 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N25
+dffeas \FANSPEED_STORAGE[12] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~49_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[12] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N26
+arriaii_lcell_comb \Add2~53 (
+// Equation(s):
+// \Add2~53_sumout  = SUM(( FANSPEED_STORAGE[13] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~50  ))
+// \Add2~54  = CARRY(( FANSPEED_STORAGE[13] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~50  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[13]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~50 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~53_sumout ),
+	.cout(\Add2~54 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~53 .extended_lut = "off";
+defparam \Add2~53 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~53 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N27
+dffeas \FANSPEED_STORAGE[13] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~53_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[13] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N28
+arriaii_lcell_comb \Add2~57 (
+// Equation(s):
+// \Add2~57_sumout  = SUM(( FANSPEED_STORAGE[14] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~54  ))
+// \Add2~58  = CARRY(( FANSPEED_STORAGE[14] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~54  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[14]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~54 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~57_sumout ),
+	.cout(\Add2~58 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~57 .extended_lut = "off";
+defparam \Add2~57 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~57 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N29
+dffeas \FANSPEED_STORAGE[14] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~57_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[14] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N30
+arriaii_lcell_comb \Add2~61 (
+// Equation(s):
+// \Add2~61_sumout  = SUM(( FANSPEED_STORAGE[15] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~58  ))
+// \Add2~62  = CARRY(( FANSPEED_STORAGE[15] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~58  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[15]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~58 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~61_sumout ),
+	.cout(\Add2~62 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~61 .extended_lut = "off";
+defparam \Add2~61 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~61 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N31
+dffeas \FANSPEED_STORAGE[15] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~61_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[15] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N32
+arriaii_lcell_comb \Add2~65 (
+// Equation(s):
+// \Add2~65_sumout  = SUM(( FANSPEED_STORAGE[16] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~62  ))
+// \Add2~66  = CARRY(( FANSPEED_STORAGE[16] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~62  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[16]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~62 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~65_sumout ),
+	.cout(\Add2~66 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~65 .extended_lut = "off";
+defparam \Add2~65 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~65 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N33
+dffeas \FANSPEED_STORAGE[16] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~65_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[16] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N34
+arriaii_lcell_comb \Add2~69 (
+// Equation(s):
+// \Add2~69_sumout  = SUM(( FANSPEED_STORAGE[17] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~66  ))
+// \Add2~70  = CARRY(( FANSPEED_STORAGE[17] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~66  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[17]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~66 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~69_sumout ),
+	.cout(\Add2~70 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~69 .extended_lut = "off";
+defparam \Add2~69 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~69 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N35
+dffeas \FANSPEED_STORAGE[17] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~69_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[17] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N36
+arriaii_lcell_comb \Add2~73 (
+// Equation(s):
+// \Add2~73_sumout  = SUM(( FANSPEED_STORAGE[18] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~70  ))
+// \Add2~74  = CARRY(( FANSPEED_STORAGE[18] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~70  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[18]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~70 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~73_sumout ),
+	.cout(\Add2~74 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~73 .extended_lut = "off";
+defparam \Add2~73 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~73 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N37
+dffeas \FANSPEED_STORAGE[18] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~73_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[18]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[18] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[18] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y8_N38
+arriaii_lcell_comb \Add2~77 (
+// Equation(s):
+// \Add2~77_sumout  = SUM(( FANSPEED_STORAGE[19] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~74  ))
+// \Add2~78  = CARRY(( FANSPEED_STORAGE[19] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~74  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[19]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~74 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~77_sumout ),
+	.cout(\Add2~78 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~77 .extended_lut = "off";
+defparam \Add2~77 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~77 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y8_N39
+dffeas \FANSPEED_STORAGE[19] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~77_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[19]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[19] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[19] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N0
+arriaii_lcell_comb \Add2~81 (
+// Equation(s):
+// \Add2~81_sumout  = SUM(( FANSPEED_STORAGE[20] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~78  ))
+// \Add2~82  = CARRY(( FANSPEED_STORAGE[20] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~78  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[20]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~78 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~81_sumout ),
+	.cout(\Add2~82 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~81 .extended_lut = "off";
+defparam \Add2~81 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~81 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N1
+dffeas \FANSPEED_STORAGE[20] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~81_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[20]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[20] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[20] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N2
+arriaii_lcell_comb \Add2~85 (
+// Equation(s):
+// \Add2~85_sumout  = SUM(( FANSPEED_STORAGE[21] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~82  ))
+// \Add2~86  = CARRY(( FANSPEED_STORAGE[21] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~82  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[21]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~82 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~85_sumout ),
+	.cout(\Add2~86 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~85 .extended_lut = "off";
+defparam \Add2~85 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~85 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N3
+dffeas \FANSPEED_STORAGE[21] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~85_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[21]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[21] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[21] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N4
+arriaii_lcell_comb \Add2~89 (
+// Equation(s):
+// \Add2~89_sumout  = SUM(( FANSPEED_STORAGE[22] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~86  ))
+// \Add2~90  = CARRY(( FANSPEED_STORAGE[22] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~86  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[22]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~86 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~89_sumout ),
+	.cout(\Add2~90 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~89 .extended_lut = "off";
+defparam \Add2~89 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~89 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N5
+dffeas \FANSPEED_STORAGE[22] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~89_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[22]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[22] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[22] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N6
+arriaii_lcell_comb \Add2~93 (
+// Equation(s):
+// \Add2~93_sumout  = SUM(( FANSPEED_STORAGE[23] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~90  ))
+// \Add2~94  = CARRY(( FANSPEED_STORAGE[23] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~90  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[23]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~90 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~93_sumout ),
+	.cout(\Add2~94 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~93 .extended_lut = "off";
+defparam \Add2~93 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~93 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N7
+dffeas \FANSPEED_STORAGE[23] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~93_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[23]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[23] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[23] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N8
+arriaii_lcell_comb \Add2~97 (
+// Equation(s):
+// \Add2~97_sumout  = SUM(( FANSPEED_STORAGE[24] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~94  ))
+// \Add2~98  = CARRY(( FANSPEED_STORAGE[24] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~94  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[24]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~94 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~97_sumout ),
+	.cout(\Add2~98 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~97 .extended_lut = "off";
+defparam \Add2~97 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~97 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N9
+dffeas \FANSPEED_STORAGE[24] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~97_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[24]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[24] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[24] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N10
+arriaii_lcell_comb \Add2~101 (
+// Equation(s):
+// \Add2~101_sumout  = SUM(( FANSPEED_STORAGE[25] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~98  ))
+// \Add2~102  = CARRY(( FANSPEED_STORAGE[25] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~98  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[25]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~98 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~101_sumout ),
+	.cout(\Add2~102 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~101 .extended_lut = "off";
+defparam \Add2~101 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~101 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N11
+dffeas \FANSPEED_STORAGE[25] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~101_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[25]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[25] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[25] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N12
+arriaii_lcell_comb \Add2~105 (
+// Equation(s):
+// \Add2~105_sumout  = SUM(( FANSPEED_STORAGE[26] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~102  ))
+// \Add2~106  = CARRY(( FANSPEED_STORAGE[26] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~102  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[26]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~102 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~105_sumout ),
+	.cout(\Add2~106 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~105 .extended_lut = "off";
+defparam \Add2~105 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~105 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N13
+dffeas \FANSPEED_STORAGE[26] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~105_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[26]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[26] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[26] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N14
+arriaii_lcell_comb \Add2~109 (
+// Equation(s):
+// \Add2~109_sumout  = SUM(( FANSPEED_STORAGE[27] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~106  ))
+// \Add2~110  = CARRY(( FANSPEED_STORAGE[27] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~106  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[27]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~106 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~109_sumout ),
+	.cout(\Add2~110 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~109 .extended_lut = "off";
+defparam \Add2~109 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~109 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N15
+dffeas \FANSPEED_STORAGE[27] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~109_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[27]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[27] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[27] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N16
+arriaii_lcell_comb \Add2~113 (
+// Equation(s):
+// \Add2~113_sumout  = SUM(( FANSPEED_STORAGE[28] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~110  ))
+// \Add2~114  = CARRY(( FANSPEED_STORAGE[28] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~110  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[28]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~110 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~113_sumout ),
+	.cout(\Add2~114 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~113 .extended_lut = "off";
+defparam \Add2~113 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~113 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N17
+dffeas \FANSPEED_STORAGE[28] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~113_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[28]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[28] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[28] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N18
+arriaii_lcell_comb \Add2~117 (
+// Equation(s):
+// \Add2~117_sumout  = SUM(( FANSPEED_STORAGE[29] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~114  ))
+// \Add2~118  = CARRY(( FANSPEED_STORAGE[29] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( \Add2~114  ))
+
+	.dataa(!FANSPEED_STORAGE[30]),
+	.datab(!\FANUP~input_o ),
+	.datac(!\LessThan2~6_combout ),
+	.datad(!FANSPEED_STORAGE[29]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(\Add2~114 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~117_sumout ),
+	.cout(\Add2~118 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~117 .extended_lut = "off";
+defparam \Add2~117 .lut_mask = 64'h00003302000000FF;
+defparam \Add2~117 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N19
+dffeas \FANSPEED_STORAGE[29] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~117_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[29]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[29] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[29] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N30
+arriaii_lcell_comb \LessThan2~0 (
+// Equation(s):
+// \LessThan2~0_combout  = ( !FANSPEED_STORAGE[27] & ( (!FANSPEED_STORAGE[29] & (!FANSPEED_STORAGE[28] & !FANSPEED_STORAGE[26])) ) )
+
+	.dataa(!FANSPEED_STORAGE[29]),
+	.datab(gnd),
+	.datac(!FANSPEED_STORAGE[28]),
+	.datad(!FANSPEED_STORAGE[26]),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[27]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~0 .extended_lut = "off";
+defparam \LessThan2~0 .lut_mask = 64'hA000A00000000000;
+defparam \LessThan2~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N38
+arriaii_lcell_comb \LessThan2~5DUPLICATE (
+// Equation(s):
+// \LessThan2~5DUPLICATE_combout  = ( \LessThan2~3_combout  & ( \LessThan2~2_combout  & ( (\LessThan2~0_combout  & (!FANSPEED_STORAGE[5] & (\LessThan2~4_combout  & \LessThan2~1_combout ))) ) ) )
+
+	.dataa(!\LessThan2~0_combout ),
+	.datab(!FANSPEED_STORAGE[5]),
+	.datac(!\LessThan2~4_combout ),
+	.datad(!\LessThan2~1_combout ),
+	.datae(!\LessThan2~3_combout ),
+	.dataf(!\LessThan2~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~5DUPLICATE_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~5DUPLICATE .extended_lut = "off";
+defparam \LessThan2~5DUPLICATE .lut_mask = 64'h0000000000000004;
+defparam \LessThan2~5DUPLICATE .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N34
+arriaii_lcell_comb \LessThan2~6 (
+// Equation(s):
+// \LessThan2~6_combout  = ( \LessThan2~5DUPLICATE_combout  & ( (!FANSPEED_STORAGE[1]) # (FANSPEED_STORAGE[0]) ) )
+
+	.dataa(!FANSPEED_STORAGE[1]),
+	.datab(gnd),
+	.datac(!FANSPEED_STORAGE[0]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\LessThan2~5DUPLICATE_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~6 .extended_lut = "off";
+defparam \LessThan2~6 .lut_mask = 64'h00000000AFAFAFAF;
+defparam \LessThan2~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N28
+arriaii_lcell_comb \LessThan2~7 (
+// Equation(s):
+// \LessThan2~7_combout  = ( FANSPEED_STORAGE[0] & ( (!FANSPEED_STORAGE[30] & \LessThan2~5_combout ) ) ) # ( !FANSPEED_STORAGE[0] & ( (!FANSPEED_STORAGE[30] & (!FANSPEED_STORAGE[1] & \LessThan2~5_combout )) ) )
+
+	.dataa(gnd),
+	.datab(!FANSPEED_STORAGE[30]),
+	.datac(!FANSPEED_STORAGE[1]),
+	.datad(!\LessThan2~5_combout ),
+	.datae(gnd),
+	.dataf(!FANSPEED_STORAGE[0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan2~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan2~7 .extended_lut = "off";
+defparam \LessThan2~7 .lut_mask = 64'h00C000C000CC00CC;
+defparam \LessThan2~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N20
+arriaii_lcell_comb \Add2~121 (
+// Equation(s):
+// \Add2~121_sumout  = SUM(( FANSPEED_STORAGE[30] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & !\LessThan2~7_combout )) ) + ( \Add2~118  ))
+// \Add2~122  = CARRY(( FANSPEED_STORAGE[30] ) + ( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & !\LessThan2~7_combout )) ) + ( \Add2~118  ))
+
+	.dataa(!FANSPEED_STORAGE[31]),
+	.datab(!\FANUP~input_o ),
+	.datac(gnd),
+	.datad(!FANSPEED_STORAGE[30]),
+	.datae(gnd),
+	.dataf(!\LessThan2~7_combout ),
+	.datag(gnd),
+	.cin(\Add2~118 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~121_sumout ),
+	.cout(\Add2~122 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~121 .extended_lut = "off";
+defparam \Add2~121 .lut_mask = 64'h00002233000000FF;
+defparam \Add2~121 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N22
+arriaii_lcell_comb \Add2~125 (
+// Equation(s):
+// \Add2~125_sumout  = SUM(( (!\FANUP~input_o ) # ((FANSPEED_STORAGE[31] & ((!\LessThan2~6_combout ) # (FANSPEED_STORAGE[30])))) ) + ( !FANSPEED_STORAGE[31] ) + ( \Add2~122  ))
+
+	.dataa(!FANSPEED_STORAGE[31]),
+	.datab(!\FANUP~input_o ),
+	.datac(!FANSPEED_STORAGE[30]),
+	.datad(!\LessThan2~6_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\Add2~122 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add2~125_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add2~125 .extended_lut = "off";
+defparam \Add2~125 .lut_mask = 64'h000055550000DDCD;
+defparam \Add2~125 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y7_N32
+arriaii_lcell_comb \FANSPEED_STORAGE~7 (
+// Equation(s):
+// \FANSPEED_STORAGE~7_combout  = ( \Add2~125_sumout  & ( ((!\FANSPEED_STORAGE~4_combout  & FANSPEED_STORAGE[31])) # (\RESET~input_o ) ) ) # ( !\Add2~125_sumout  & ( ((FANSPEED_STORAGE[31]) # (\FANSPEED_STORAGE~4_combout )) # (\RESET~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(!\RESET~input_o ),
+	.datac(!\FANSPEED_STORAGE~4_combout ),
+	.datad(!FANSPEED_STORAGE[31]),
+	.datae(gnd),
+	.dataf(!\Add2~125_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~7_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~7 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~7 .lut_mask = 64'h3FFF3FFF33F333F3;
+defparam \FANSPEED_STORAGE~7 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N33
+dffeas \FANSPEED_STORAGE[31] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\FANSPEED_STORAGE~7_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[31]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[31] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[31] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X50_Y7_N21
+dffeas \FANSPEED_STORAGE[30] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\Add2~121_sumout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\RESET~input_o ),
+	.sload(gnd),
+	.ena(\FANSPEED_STORAGE[12]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[30]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[30] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[30] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N16
+arriaii_lcell_comb \FANSPEED_STORAGE~6 (
+// Equation(s):
+// \FANSPEED_STORAGE~6_combout  = ( \Add2~5_sumout  & ( \FANSPEED_STORAGE~4_combout  ) ) # ( !\Add2~5_sumout  & ( \FANSPEED_STORAGE~4_combout  & ( \RESET~input_o  ) ) ) # ( \Add2~5_sumout  & ( !\FANSPEED_STORAGE~4_combout  & ( (FANSPEED_STORAGE[1]) # 
+// (\RESET~input_o ) ) ) ) # ( !\Add2~5_sumout  & ( !\FANSPEED_STORAGE~4_combout  & ( (FANSPEED_STORAGE[1]) # (\RESET~input_o ) ) ) )
+
+	.dataa(!\RESET~input_o ),
+	.datab(gnd),
+	.datac(!FANSPEED_STORAGE[1]),
+	.datad(gnd),
+	.datae(!\Add2~5_sumout ),
+	.dataf(!\FANSPEED_STORAGE~4_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~6 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~6 .lut_mask = 64'h5F5F5F5F5555FFFF;
+defparam \FANSPEED_STORAGE~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N38
+arriaii_lcell_comb \FANSPEED_STORAGE[1]~feeder (
+// Equation(s):
+// \FANSPEED_STORAGE[1]~feeder_combout  = ( \FANSPEED_STORAGE~6_combout  )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\FANSPEED_STORAGE~6_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE[1]~feeder_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[1]~feeder .extended_lut = "off";
+defparam \FANSPEED_STORAGE[1]~feeder .lut_mask = 64'h00000000FFFFFFFF;
+defparam \FANSPEED_STORAGE[1]~feeder .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y5_N39
+dffeas \FANSPEED_STORAGE[1] (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\FANSPEED_STORAGE[1]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(FANSPEED_STORAGE[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED_STORAGE[1] .is_wysiwyg = "true";
+defparam \FANSPEED_STORAGE[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X59_Y4_N1
+arriaii_io_ibuf \FANDOWN~input (
+	.i(FANDOWN),
+	.ibar(gnd),
+	.o(\FANDOWN~input_o ));
+// synopsys translate_off
+defparam \FANDOWN~input .bus_hold = "false";
+defparam \FANDOWN~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N14
+arriaii_lcell_comb \FANSPEED_STORAGE~3 (
+// Equation(s):
+// \FANSPEED_STORAGE~3_combout  = ( \LessThan2~5_combout  & ( FANSPEED_STORAGE[31] & ( (\FANDOWN~input_o  & ((FANSPEED_STORAGE[30]) # (FANSPEED_STORAGE[1]))) ) ) ) # ( !\LessThan2~5_combout  & ( FANSPEED_STORAGE[31] & ( \FANDOWN~input_o  ) ) )
+
+	.dataa(!FANSPEED_STORAGE[1]),
+	.datab(gnd),
+	.datac(!\FANDOWN~input_o ),
+	.datad(!FANSPEED_STORAGE[30]),
+	.datae(!\LessThan2~5_combout ),
+	.dataf(!FANSPEED_STORAGE[31]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~3 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~3 .lut_mask = 64'h000000000F0F050F;
+defparam \FANSPEED_STORAGE~3 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N6
+arriaii_lcell_comb \FANSPEED_STORAGE~4 (
+// Equation(s):
+// \FANSPEED_STORAGE~4_combout  = ( !\process_0~0_combout  & ( \FANSPEED_STORAGE~2_combout  & ( (\FANSPEED_STORAGE~3_combout  & !\FANSPEED_STORAGE~1_combout ) ) ) ) # ( !\process_0~0_combout  & ( !\FANSPEED_STORAGE~2_combout  & ( 
+// (!\FANSPEED_STORAGE~1_combout  & ((\FANSPEED_STORAGE~3_combout ) # (\FANUP~input_o ))) ) ) )
+
+	.dataa(gnd),
+	.datab(!\FANUP~input_o ),
+	.datac(!\FANSPEED_STORAGE~3_combout ),
+	.datad(!\FANSPEED_STORAGE~1_combout ),
+	.datae(!\process_0~0_combout ),
+	.dataf(!\FANSPEED_STORAGE~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~4 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~4 .lut_mask = 64'h3F0000000F000000;
+defparam \FANSPEED_STORAGE~4 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N24
+arriaii_lcell_comb \FANSPEED_STORAGE~5 (
+// Equation(s):
+// \FANSPEED_STORAGE~5_combout  = ( \Add2~1_sumout  & ( \FANSPEED_STORAGE~4_combout  & ( !\RESET~input_o  ) ) ) # ( \Add2~1_sumout  & ( !\FANSPEED_STORAGE~4_combout  & ( (!FANSPEED_STORAGE[0] & !\RESET~input_o ) ) ) ) # ( !\Add2~1_sumout  & ( 
+// !\FANSPEED_STORAGE~4_combout  & ( (!FANSPEED_STORAGE[0] & !\RESET~input_o ) ) ) )
+
+	.dataa(gnd),
+	.datab(!FANSPEED_STORAGE[0]),
+	.datac(!\RESET~input_o ),
+	.datad(gnd),
+	.datae(!\Add2~1_sumout ),
+	.dataf(!\FANSPEED_STORAGE~4_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~5 .extended_lut = "off";
+defparam \FANSPEED_STORAGE~5 .lut_mask = 64'hC0C0C0C00000F0F0;
+defparam \FANSPEED_STORAGE~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y5_N25
+dffeas \FANSPEED[0]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(\FANSPEED_STORAGE~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\FANSPEED[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED[0]~reg0 .is_wysiwyg = "true";
+defparam \FANSPEED[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X50_Y5_N18
+arriaii_lcell_comb \FANSPEED_STORAGE~6DUPLICATE (
+// Equation(s):
+// \FANSPEED_STORAGE~6DUPLICATE_combout  = ( \Add2~5_sumout  & ( \FANSPEED_STORAGE~4_combout  ) ) # ( !\Add2~5_sumout  & ( \FANSPEED_STORAGE~4_combout  & ( \RESET~input_o  ) ) ) # ( \Add2~5_sumout  & ( !\FANSPEED_STORAGE~4_combout  & ( (FANSPEED_STORAGE[1]) 
+// # (\RESET~input_o ) ) ) ) # ( !\Add2~5_sumout  & ( !\FANSPEED_STORAGE~4_combout  & ( (FANSPEED_STORAGE[1]) # (\RESET~input_o ) ) ) )
+
+	.dataa(!\RESET~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!FANSPEED_STORAGE[1]),
+	.datae(!\Add2~5_sumout ),
+	.dataf(!\FANSPEED_STORAGE~4_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\FANSPEED_STORAGE~6DUPLICATE_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \FANSPEED_STORAGE~6DUPLICATE .extended_lut = "off";
+defparam \FANSPEED_STORAGE~6DUPLICATE .lut_mask = 64'h55FF55FF5555FFFF;
+defparam \FANSPEED_STORAGE~6DUPLICATE .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X50_Y5_N13
+dffeas \FANSPEED[1]~reg0 (
+	.clk(\CLOCK~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\FANSPEED_STORAGE~6DUPLICATE_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\FANSPEED[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \FANSPEED[1]~reg0 .is_wysiwyg = "true";
+defparam \FANSPEED[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+assign TEMPERATURE[0] = \TEMPERATURE[0]~output_o ;
+
+assign TEMPERATURE[1] = \TEMPERATURE[1]~output_o ;
+
+assign TEMPERATURE[2] = \TEMPERATURE[2]~output_o ;
+
+assign TEMPERATURE[3] = \TEMPERATURE[3]~output_o ;
+
+assign TEMPERATURE[4] = \TEMPERATURE[4]~output_o ;
+
+assign TEMPERATURE[5] = \TEMPERATURE[5]~output_o ;
+
+assign FANSPEED[0] = \FANSPEED[0]~output_o ;
+
+assign FANSPEED[1] = \FANSPEED[1]~output_o ;
+
+endmodule

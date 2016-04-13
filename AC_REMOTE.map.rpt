@@ -1,6 +1,6 @@
 Analysis & Synthesis report for AC_REMOTE
-Fri Apr 01 01:51:02 2016
-Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+Wed Apr 13 18:02:40 2016
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
 ---------------------
@@ -9,179 +9,232 @@ Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Resource Usage Summary
-  6. Analysis & Synthesis Resource Utilization by Entity
-  7. General Register Statistics
-  8. Inverted Register Statistics
-  9. Source assignments for lpm_add_sub:Add0|addcore:adder
- 10. Source assignments for lpm_add_sub:Add1|addcore:adder
- 11. Source assignments for lpm_add_sub:Add2|addcore:adder
- 12. Source assignments for lpm_add_sub:Add3|addcore:adder
- 13. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
- 14. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
- 15. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
- 16. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3
- 17. Analysis & Synthesis Messages
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2009 Altera Corporation
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                               ;
-+-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Apr 01 01:51:02 2016        ;
-; Quartus II Version          ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
-; Revision Name               ; AC_REMOTE                                    ;
-; Top-level Entity Name       ; AC_REMOTE                                    ;
-; Family                      ; FLEX10K                                      ;
-; Total logic elements        ; 297                                          ;
-; Total pins                  ; 14                                           ;
-; Total memory bits           ; 0                                            ;
-+-----------------------------+----------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++-----------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Wed Apr 13 18:02:40 2016       ;
+; Quartus Prime Version             ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Revision Name                     ; AC_REMOTE                                   ;
+; Top-level Entity Name             ; AC_REMOTE                                   ;
+; Family                            ; Arria II GX                                 ;
+; Logic utilization                 ; N/A                                         ;
+;     Combinational ALUTs           ; 102                                         ;
+;     Memory ALUTs                  ; 0                                           ;
+;     Dedicated logic registers     ; 72                                          ;
+; Total registers                   ; 72                                          ;
+; Total pins                        ; 14                                          ;
+; Total virtual pins                ; 0                                           ;
+; Total block memory bits           ; 0                                           ;
+; DSP block 18-bit elements         ; 0                                           ;
+; Total GXB Receiver Channel PCS    ; 0                                           ;
+; Total GXB Receiver Channel PMA    ; 0                                           ;
+; Total GXB Transmitter Channel PCS ; 0                                           ;
+; Total GXB Transmitter Channel PMA ; 0                                           ;
+; Total PLLs                        ; 0                                           ;
+; Total DLLs                        ; 0                                           ;
++-----------------------------------+---------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                               ;
-+--------------------------------------------------------------+--------------+---------------+
-; Option                                                       ; Setting      ; Default Value ;
-+--------------------------------------------------------------+--------------+---------------+
-; Top-level entity name                                        ; AC_REMOTE    ; AC_REMOTE     ;
-; Family name                                                  ; FLEX10K      ; Stratix II    ;
-; Use Generated Physical Constraints File                      ; Off          ;               ;
-; Use smart compilation                                        ; Off          ; Off           ;
-; Create Debugging Nodes for IP Cores                          ; Off          ; Off           ;
-; Preserve fewer node names                                    ; On           ; On            ;
-; Disable OpenCore Plus hardware evaluation                    ; Off          ; Off           ;
-; Verilog Version                                              ; Verilog_2001 ; Verilog_2001  ;
-; VHDL Version                                                 ; VHDL93       ; VHDL93        ;
-; State Machine Processing                                     ; Auto         ; Auto          ;
-; Safe State Machine                                           ; Off          ; Off           ;
-; Extract Verilog State Machines                               ; On           ; On            ;
-; Extract VHDL State Machines                                  ; On           ; On            ;
-; Ignore Verilog initial constructs                            ; Off          ; Off           ;
-; Iteration limit for constant Verilog loops                   ; 5000         ; 5000          ;
-; Iteration limit for non-constant Verilog loops               ; 250          ; 250           ;
-; Add Pass-Through Logic to Inferred RAMs                      ; On           ; On            ;
-; Parallel Synthesis                                           ; Off          ; Off           ;
-; NOT Gate Push-Back                                           ; On           ; On            ;
-; Power-Up Don't Care                                          ; On           ; On            ;
-; Remove Redundant Logic Cells                                 ; Off          ; Off           ;
-; Remove Duplicate Registers                                   ; On           ; On            ;
-; Ignore CARRY Buffers                                         ; Off          ; Off           ;
-; Ignore CASCADE Buffers                                       ; Off          ; Off           ;
-; Ignore GLOBAL Buffers                                        ; Off          ; Off           ;
-; Ignore ROW GLOBAL Buffers                                    ; Off          ; Off           ;
-; Ignore LCELL Buffers                                         ; Off          ; Off           ;
-; Ignore SOFT Buffers                                          ; On           ; On            ;
-; Limit AHDL Integers to 32 Bits                               ; Off          ; Off           ;
-; Auto Implement in ROM                                        ; Off          ; Off           ;
-; Optimization Technique                                       ; Area         ; Area          ;
-; Carry Chain Length                                           ; 32           ; 32            ;
-; Cascade Chain Length                                         ; 2            ; 2             ;
-; Auto Carry Chains                                            ; On           ; On            ;
-; Auto Open-Drain Pins                                         ; On           ; On            ;
-; Auto ROM Replacement                                         ; On           ; On            ;
-; Auto RAM Replacement                                         ; On           ; On            ;
-; Auto Clock Enable Replacement                                ; On           ; On            ;
-; Strict RAM Replacement                                       ; Off          ; Off           ;
-; Auto Resource Sharing                                        ; Off          ; Off           ;
-; Allow Any RAM Size For Recognition                           ; Off          ; Off           ;
-; Allow Any ROM Size For Recognition                           ; Off          ; Off           ;
-; Use LogicLock Constraints during Resource Balancing          ; On           ; On            ;
-; Ignore translate_off and synthesis_off directives            ; Off          ; Off           ;
-; Show Parameter Settings Tables in Synthesis Report           ; On           ; On            ;
-; HDL message level                                            ; Level2       ; Level2        ;
-; Suppress Register Optimization Related Messages              ; Off          ; Off           ;
-; Number of Removed Registers Reported in Synthesis Report     ; 100          ; 100           ;
-; Number of Inverted Registers Reported in Synthesis Report    ; 100          ; 100           ;
-; Block Design Naming                                          ; Auto         ; Auto          ;
-; Synthesis Effort                                             ; Auto         ; Auto          ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal ; On           ; On            ;
-; Analysis & Synthesis Message Level                           ; Medium       ; Medium        ;
-+--------------------------------------------------------------+--------------+---------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                           ; AC_REMOTE          ; AC_REMOTE          ;
+; Family name                                                                     ; Arria II GX        ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; Off                ; Off                ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; Off                ; Off                ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
-; AC_REMOTE.vhd                    ; yes             ; User VHDL File  ; C:/Users/Haresh/Desktop/AC Remote/AC_REMOTE.vhd                         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;
-; addcore.inc                      ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/addcore.inc             ;
-; look_add.inc                     ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/look_add.inc            ;
-; bypassff.inc                     ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/bypassff.inc            ;
-; altshift.inc                     ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/altshift.inc            ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;
-; alt_mercury_add_sub.inc          ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/alt_mercury_add_sub.inc ;
-; aglobal90.inc                    ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/aglobal90.inc           ;
-; addcore.tdf                      ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/addcore.tdf             ;
-; a_csnbuffer.inc                  ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/a_csnbuffer.inc         ;
-; a_csnbuffer.tdf                  ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;
-; altshift.tdf                     ; yes             ; Megafunction    ; c:/altera/90sp1/quartus/libraries/megafunctions/altshift.tdf            ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+-----------------------------------+---------+
-; Resource                          ; Usage   ;
-+-----------------------------------+---------+
-; Total logic elements              ; 297     ;
-; Total combinational functions     ; 296     ;
-;     -- Total 4-input functions    ; 98      ;
-;     -- Total 3-input functions    ; 67      ;
-;     -- Total 2-input functions    ; 4       ;
-;     -- Total 1-input functions    ; 127     ;
-;     -- Total 0-input functions    ; 0       ;
-; Total registers                   ; 72      ;
-; Total logic cells in carry chains ; 128     ;
-; I/O pins                          ; 14      ;
-; Maximum fan-out node              ; RESET   ;
-; Maximum fan-out                   ; 73      ;
-; Total fan-out                     ; 965     ;
-; Average fan-out                   ; 3.10    ;
-+-----------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; AC_REMOTE.vhd                    ; yes             ; User VHDL File  ; C:/Users/Haresh/Desktop/VHDL-Project/AC_REMOTE.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
-+------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                               ; Library Name ;
-+------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
-; |AC_REMOTE                         ; 297 (171)   ; 72           ; 0           ; 14   ; 225 (99)     ; 1 (1)             ; 71 (71)          ; 128 (2)         ; 0 (0)      ; |AC_REMOTE                                                        ; work         ;
-;    |lpm_add_sub:Add0|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0                                       ; work         ;
-;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node ; work         ;
-;    |lpm_add_sub:Add1|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1                                       ; work         ;
-;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node ; work         ;
-;    |lpm_add_sub:Add2|              ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2                                       ; work         ;
-;       |addcore:adder|              ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node ; work         ;
-;    |lpm_add_sub:Add3|              ; 32 (0)      ; 0            ; 0           ; 0    ; 32 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3                                       ; work         ;
-;       |addcore:adder|              ; 32 (1)      ; 0            ; 0           ; 0    ; 32 (1)       ; 0 (0)             ; 0 (0)            ; 32 (1)          ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder                         ; work         ;
-;          |a_csnbuffer:result_node| ; 31 (31)     ; 0            ; 0           ; 0    ; 31 (31)      ; 0 (0)             ; 0 (0)            ; 31 (31)         ; 0 (0)      ; |AC_REMOTE|lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node ; work         ;
-+------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++-----------------------------------------------+-------------+
+; Resource                                      ; Usage       ;
++-----------------------------------------------+-------------+
+; Estimated ALUTs Used                          ; 102         ;
+;     -- Combinational ALUTs                    ; 102         ;
+;     -- Memory ALUTs                           ; 0           ;
+;     -- LUT_REGs                               ; 0           ;
+; Dedicated logic registers                     ; 72          ;
+;                                               ;             ;
+; Estimated ALUTs Unavailable                   ; 6           ;
+;     -- Due to unpartnered combinational logic ; 6           ;
+;     -- Due to Memory ALUTs                    ; 0           ;
+;                                               ;             ;
+; Total combinational functions                 ; 102         ;
+; Combinational ALUT usage by number of inputs  ;             ;
+;     -- 7 input functions                      ; 0           ;
+;     -- 6 input functions                      ; 10          ;
+;     -- 5 input functions                      ; 68          ;
+;     -- 4 input functions                      ; 18          ;
+;     -- <=3 input functions                    ; 6           ;
+;                                               ;             ;
+; Combinational ALUTs by mode                   ;             ;
+;     -- normal mode                            ; 38          ;
+;     -- extended LUT mode                      ; 0           ;
+;     -- arithmetic mode                        ; 64          ;
+;     -- shared arithmetic mode                 ; 0           ;
+;                                               ;             ;
+; Estimated ALUT/register pairs used            ; 113         ;
+;                                               ;             ;
+; Total registers                               ; 72          ;
+;     -- Dedicated logic registers              ; 72          ;
+;     -- I/O registers                          ; 0           ;
+;     -- LUT_REGs                               ; 0           ;
+;                                               ;             ;
+;                                               ;             ;
+; I/O pins                                      ; 14          ;
+;                                               ;             ;
+; DSP block 18-bit elements                     ; 0           ;
+;                                               ;             ;
+; Maximum fan-out node                          ; CLOCK~input ;
+; Maximum fan-out                               ; 72          ;
+; Total fan-out                                 ; 818         ;
+; Average fan-out                               ; 4.05        ;
++-----------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; |AC_REMOTE                 ; 102 (102)         ; 72 (72)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 14   ; 0            ; |AC_REMOTE          ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -191,11 +244,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 72    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 54    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 54    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -205,205 +258,84 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; \CHANGE:TEMPERATURE_STORAGE[0]         ; 4       ;
-; \CHANGE:TEMPERATURE_STORAGE[31]        ; 7       ;
-; \CHANGE:FANSPEED_STORAGE[0]            ; 6       ;
-; \CHANGE:FANSPEED_STORAGE[31]           ; 4       ;
+; TEMPERATURE_STORAGE[0]                 ; 3       ;
+; TEMPERATURE_STORAGE[31]                ; 36      ;
+; FANSPEED_STORAGE[0]                    ; 5       ;
+; FANSPEED_STORAGE[31]                   ; 34      ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------+
-; Source assignments for lpm_add_sub:Add0|addcore:adder ;
-+---------------------------+-------+------+------------+
-; Assignment                ; Value ; From ; To         ;
-+---------------------------+-------+------+------------+
-; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
-+---------------------------+-------+------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 25 bits   ; 50 ALUTs      ; 0 ALUTs              ; 50 ALUTs               ; Yes        ; |AC_REMOTE|TEMPERATURE_STORAGE[6] ;
+; 4:1                ; 29 bits   ; 58 ALUTs      ; 0 ALUTs              ; 58 ALUTs               ; Yes        ; |AC_REMOTE|FANSPEED_STORAGE[12]   ;
+; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |AC_REMOTE|TEMPERATURE_STORAGE    ;
+; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |AC_REMOTE|TEMPERATURE_STORAGE    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
-+-------------------------------------------------------+
-; Source assignments for lpm_add_sub:Add1|addcore:adder ;
-+---------------------------+-------+------+------------+
-; Assignment                ; Value ; From ; To         ;
-+---------------------------+-------+------+------------+
-; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
-+---------------------------+-------+------+------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriaii_ff            ; 72                          ;
+;     ENA SCLR          ; 54                          ;
+;     plain             ; 18                          ;
+; boundary_port         ; 14                          ;
+; stratixiv_lcell_comb  ; 102                         ;
+;     arith             ; 64                          ;
+;         1 data inputs ; 2                           ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 58                          ;
+;     normal            ; 38                          ;
+;         1 data inputs ; 2                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 10                          ;
+;         6 data inputs ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 6.57                        ;
++-----------------------+-----------------------------+
 
 
-+-------------------------------------------------------+
-; Source assignments for lpm_add_sub:Add2|addcore:adder ;
-+---------------------------+-------+------+------------+
-; Assignment                ; Value ; From ; To         ;
-+---------------------------+-------+------+------------+
-; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
-+---------------------------+-------+------+------------+
-
-
-+-------------------------------------------------------+
-; Source assignments for lpm_add_sub:Add3|addcore:adder ;
-+---------------------------+-------+------+------------+
-; Assignment                ; Value ; From ; To         ;
-+---------------------------+-------+------+------------+
-; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
-+---------------------------+-------+------+------------+
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0 ;
-+------------------------+-------------+----------------------------+
-; Parameter Name         ; Value       ; Type                       ;
-+------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 32          ; Untyped                    ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; ADD         ; Untyped                    ;
-; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
-; LPM_PIPELINE           ; 0           ; Untyped                    ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
-; REGISTERED_AT_END      ; 0           ; Untyped                    ;
-; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
-; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
-; USE_WYS                ; OFF         ; Untyped                    ;
-; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_soh ; Untyped                    ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
-+------------------------+-------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1 ;
-+------------------------+-------------+----------------------------+
-; Parameter Name         ; Value       ; Type                       ;
-+------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 32          ; Untyped                    ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; ADD         ; Untyped                    ;
-; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
-; LPM_PIPELINE           ; 0           ; Untyped                    ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
-; REGISTERED_AT_END      ; 0           ; Untyped                    ;
-; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
-; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
-; USE_WYS                ; OFF         ; Untyped                    ;
-; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_2eh ; Untyped                    ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
-+------------------------+-------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2 ;
-+------------------------+-------------+----------------------------+
-; Parameter Name         ; Value       ; Type                       ;
-+------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 32          ; Untyped                    ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; ADD         ; Untyped                    ;
-; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
-; LPM_PIPELINE           ; 0           ; Untyped                    ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
-; REGISTERED_AT_END      ; 0           ; Untyped                    ;
-; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
-; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
-; USE_WYS                ; OFF         ; Untyped                    ;
-; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_soh ; Untyped                    ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
-+------------------------+-------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add3 ;
-+------------------------+-------------+----------------------------+
-; Parameter Name         ; Value       ; Type                       ;
-+------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 32          ; Untyped                    ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; ADD         ; Untyped                    ;
-; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
-; LPM_PIPELINE           ; 0           ; Untyped                    ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
-; REGISTERED_AT_END      ; 0           ; Untyped                    ;
-; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                    ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
-; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
-; USE_WYS                ; OFF         ; Untyped                    ;
-; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_2eh ; Untyped                    ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
-+------------------------+-------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II Analysis & Synthesis
-    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Apr 01 01:51:00 2016
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Wed Apr 13 18:02:23 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AC_REMOTE -c AC_REMOTE
-Info: Found 2 design units, including 1 entities, in source file AC_REMOTE.vhd
-    Info: Found design unit 1: AC_REMOTE-LOGIC
-    Info: Found entity 1: AC_REMOTE
-Info: Elaborating entity "AC_REMOTE" for the top level hierarchy
-Info: Inferred 4 megafunctions from design logic
-    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
-    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
-    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add2"
-    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add3"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0"
-Info: Instantiated megafunction "lpm_add_sub:Add0" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "32"
-    Info: Parameter "LPM_DIRECTION" = "ADD"
-    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add1"
-Info: Instantiated megafunction "lpm_add_sub:Add1" with the following parameter:
-    Info: Parameter "LPM_WIDTH" = "32"
-    Info: Parameter "LPM_DIRECTION" = "ADD"
-    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
-Info: Elaborated megafunction instantiation "lpm_add_sub:Add1|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add1"
-Info: Implemented 311 device resources after synthesis - the final resource count might be different
-    Info: Implemented 6 input pins
-    Info: Implemented 8 output pins
-    Info: Implemented 297 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 260 megabytes
-    Info: Processing ended: Fri Apr 01 01:51:02 2016
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ac_remote.vhd
+    Info (12022): Found design unit 1: AC_REMOTE-LOGIC File: C:/Users/Haresh/Desktop/VHDL-Project/AC_REMOTE.vhd Line: 19
+    Info (12023): Found entity 1: AC_REMOTE File: C:/Users/Haresh/Desktop/VHDL-Project/AC_REMOTE.vhd Line: 6
+Info (12127): Elaborating entity "AC_REMOTE" for the top level hierarchy
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 116 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 915 megabytes
+    Info: Processing ended: Wed Apr 13 18:02:40 2016
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
 
 

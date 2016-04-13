@@ -5,19 +5,20 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 1991-2009 Altera Corporation
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 */
 
 HEADER
@@ -330,7 +331,11 @@ TRANSITION_LIST("TEMPUP")
 		REPEAT = 1;
 		LEVEL 0 FOR 220.0;
 		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 760.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 580.0;
 	}
 }
 
@@ -345,7 +350,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "FANDOWN";
+	CHANNEL = "RESET";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 1;
@@ -356,7 +361,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "FANSPEED";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
+	RADIX = Unsigned;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4;
@@ -366,7 +371,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "FANSPEED[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
+	RADIX = Unsigned;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -376,7 +381,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "FANSPEED[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
+	RADIX = Unsigned;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -384,7 +389,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "FANUP";
+	CHANNEL = "FANDOWN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 5;
@@ -393,7 +398,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "RESET";
+	CHANNEL = "FANUP";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 6;
@@ -402,81 +407,81 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TEMPDOWN";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 7;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
 	CHANNEL = "TEMPERATURE";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 8;
+	RADIX = Unsigned;
+	TREE_INDEX = 7;
 	TREE_LEVEL = 0;
-	CHILDREN = 9, 10, 11, 12, 13, 14;
+	CHILDREN = 8, 9, 10, 11, 12, 13;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 9;
+	RADIX = Unsigned;
+	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 10;
+	RADIX = Unsigned;
+	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 11;
+	RADIX = Unsigned;
+	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 12;
+	RADIX = Unsigned;
+	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 13;
+	RADIX = Unsigned;
+	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "TEMPERATURE[0]";
 	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "TEMPDOWN";
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 14;
-	TREE_LEVEL = 1;
-	PARENT = 8;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE

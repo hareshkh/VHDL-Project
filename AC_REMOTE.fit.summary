@@ -1,10 +1,22 @@
-Fitter Status : Successful - Fri Apr 01 01:51:05 2016
-Quartus II Version : 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition
+Fitter Status : Successful - Wed Apr 13 18:03:04 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : AC_REMOTE
 Top-level Entity Name : AC_REMOTE
-Family : FLEX10K
-Device : EPF10K10LC84-3
+Family : Arria II GX
+Device : EP2AGX45CU17I3
 Timing Models : Final
-Total logic elements : 297 / 576 ( 52 % )
-Total pins : 14 / 59 ( 24 % )
-Total memory bits : 0 / 6,144 ( 0 % )
+Logic utilization : < 1 %
+    Combinational ALUTs : 105 / 36,100 ( < 1 % )
+    Memory ALUTs : 0 / 18,050 ( 0 % )
+    Dedicated logic registers : 72 / 36,100 ( < 1 % )
+Total registers : 72
+Total pins : 14 / 176 ( 8 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 2,939,904 ( 0 % )
+DSP block 18-bit elements : 0 / 232 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 4 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 4 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

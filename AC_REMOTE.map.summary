@@ -1,8 +1,20 @@
-Analysis & Synthesis Status : Successful - Fri Apr 01 01:51:02 2016
-Quartus II Version : 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition
+Analysis & Synthesis Status : Successful - Wed Apr 13 18:02:40 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : AC_REMOTE
 Top-level Entity Name : AC_REMOTE
-Family : FLEX10K
-Total logic elements : 297
+Family : Arria II GX
+Logic utilization : N/A
+    Combinational ALUTs : 102
+    Memory ALUTs : 0
+    Dedicated logic registers : 72
+Total registers : 72
 Total pins : 14
-Total memory bits : 0
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 18-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0
+Total DLLs : 0

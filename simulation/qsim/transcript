@@ -1,0 +1,37 @@
+# do AC_REMOTE.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:15:20 on Apr 13,2016
+# vlog -work work AC_REMOTE.vo 
+# -- Compiling module AC_REMOTE
+# 
+# Top level modules:
+# 	AC_REMOTE
+# End time: 18:15:21 on Apr 13,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:15:21 on Apr 13,2016
+# vlog -work work AC_REMOTE.vwf.vt 
+# -- Compiling module AC_REMOTE_vlg_vec_tst
+# 
+# Top level modules:
+# 	AC_REMOTE_vlg_vec_tst
+# End time: 18:15:21 on Apr 13,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L arriaii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.AC_REMOTE_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 18:15:21 on Apr 13,2016
+# Loading work.AC_REMOTE_vlg_vec_tst
+# Loading work.AC_REMOTE
+# Loading arriaii_ver.arriaii_io_obuf
+# Loading arriaii_ver.arriaii_io_ibuf
+# Loading arriaii_ver.arriaii_clkena
+# Loading arriaii_ver.arriaii_ena_reg
+# Loading arriaii_ver.arriaii_and2
+# Loading arriaii_ver.arriaii_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Note: $finish    : AC_REMOTE.vwf.vt(57)
+#    Time: 1 us  Iteration: 0  Instance: /AC_REMOTE_vlg_vec_tst
+# End time: 18:15:21 on Apr 13,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

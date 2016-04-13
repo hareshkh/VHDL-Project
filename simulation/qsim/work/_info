@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Haresh/Desktop/VHDL-Project/simulation/qsim
+vAC_REMOTE
+Z1 !s110 1460551521
+!i10b 1
+!s100 6fZZXcEoZdNeb2?@TE;OP1
+IaCOTc@3SJg93VG]e1dS8V1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1460551519
+8AC_REMOTE.vo
+FAC_REMOTE.vo
+L0 32
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1460551520.000000
+!s107 AC_REMOTE.vo|
+!s90 -work|work|AC_REMOTE.vo|
+!i113 1
+Z4 o-work work
+n@a@c_@r@e@m@o@t@e
+vAC_REMOTE_vlg_vec_tst
+R1
+!i10b 1
+!s100 B_Jfn<Qa0NEZ<<]V4mg7O0
+IZaEhDWGBgXz?:W>eD9A@C2
+R2
+R0
+w1460551513
+8AC_REMOTE.vwf.vt
+FAC_REMOTE.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1460551521.000000
+!s107 AC_REMOTE.vwf.vt|
+!s90 -work|work|AC_REMOTE.vwf.vt|
+!i113 1
+R4
+n@a@c_@r@e@m@o@t@e_vlg_vec_tst

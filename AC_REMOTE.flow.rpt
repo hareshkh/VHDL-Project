@@ -1,6 +1,6 @@
 Flow report for AC_REMOTE
-Fri Apr 01 01:51:07 2016
-Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+Wed Apr 13 18:15:19 2016
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
 ---------------------
@@ -13,43 +13,57 @@ Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
   5. Flow Elapsed Time
   6. Flow OS Summary
   7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2009 Altera Corporation
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+------------------------------------------------------------------------+
-; Flow Summary                                                           ;
-+-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Fri Apr 01 01:51:07 2016        ;
-; Quartus II Version      ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
-; Revision Name           ; AC_REMOTE                                    ;
-; Top-level Entity Name   ; AC_REMOTE                                    ;
-; Family                  ; FLEX10K                                      ;
-; Met timing requirements ; Yes                                          ;
-; Total logic elements    ; 297 / 576 ( 52 % )                           ;
-; Total pins              ; 14 / 59 ( 24 % )                             ;
-; Total memory bits       ; 0 / 6,144 ( 0 % )                            ;
-; Device                  ; EPF10K10LC84-3                               ;
-; Timing Models           ; Final                                        ;
-+-------------------------+----------------------------------------------+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++-----------------------------------+---------------------------------------------+
+; Flow Status                       ; Successful - Wed Apr 13 18:15:19 2016       ;
+; Quartus Prime Version             ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Revision Name                     ; AC_REMOTE                                   ;
+; Top-level Entity Name             ; AC_REMOTE                                   ;
+; Family                            ; Arria II GX                                 ;
+; Logic utilization                 ; < 1 %                                       ;
+;     Combinational ALUTs           ; 105 / 36,100 ( < 1 % )                      ;
+;     Memory ALUTs                  ; 0 / 18,050 ( 0 % )                          ;
+;     Dedicated logic registers     ; 72 / 36,100 ( < 1 % )                       ;
+; Total registers                   ; 72                                          ;
+; Total pins                        ; 14 / 176 ( 8 % )                            ;
+; Total virtual pins                ; 0                                           ;
+; Total block memory bits           ; 0 / 2,939,904 ( 0 % )                       ;
+; DSP block 18-bit elements         ; 0 / 232 ( 0 % )                             ;
+; Total GXB Receiver Channel PCS    ; 0 / 4 ( 0 % )                               ;
+; Total GXB Receiver Channel PMA    ; 0 / 4 ( 0 % )                               ;
+; Total GXB Transmitter Channel PCS ; 0 / 4 ( 0 % )                               ;
+; Total GXB Transmitter Channel PMA ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                        ; 0 / 4 ( 0 % )                               ;
+; Total DLLs                        ; 0 / 2 ( 0 % )                               ;
+; Device                            ; EP2AGX45CU17I3                              ;
+; Timing Models                     ; Final                                       ;
++-----------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -57,45 +71,56 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/01/2016 01:51:01 ;
+; Start date & time ; 04/13/2016 18:02:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; AC_REMOTE           ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                   ;
-+------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 10995770589188.145945566104544 ; --            ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+--------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 10995770589188.146055074404564 ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                            ; --            ; --          ; eda_blast_fpga ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 260 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:02     ; 1.0                     ; 212 MB              ; 00:00:01                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 207 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 175 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:04     ; --                      ; --                  ; 00:00:03                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 915 MB              ; 00:00:30                           ;
+; Fitter                    ; 00:00:18     ; 1.0                     ; 1660 MB             ; 00:00:15                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 861 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 957 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 764 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 786 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 764 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 768 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:48     ; --                      ; --                  ; 00:00:56                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-5EK3KUP  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; DESKTOP-5EK3KUP  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; DESKTOP-5EK3KUP  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-5EK3KUP  ; Windows Vista ; 6.2        ; x86_64         ;
-+-------------------------+------------------+---------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-5EK3KUP  ; Windows 8 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -104,7 +129,11 @@ applicable agreement for further details.
 quartus_map --read_settings_files=on --write_settings_files=off AC_REMOTE -c AC_REMOTE
 quartus_fit --read_settings_files=off --write_settings_files=off AC_REMOTE -c AC_REMOTE
 quartus_asm --read_settings_files=off --write_settings_files=off AC_REMOTE -c AC_REMOTE
-quartus_tan --read_settings_files=off --write_settings_files=off AC_REMOTE -c AC_REMOTE
+quartus_sta AC_REMOTE -c AC_REMOTE
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off AC_REMOTE -c AC_REMOTE --vector_source=C:/Users/Haresh/Desktop/VHDL-Project/AC_REMOTE.vwf --testbench_file=C:/Users/Haresh/Desktop/VHDL-Project/simulation/qsim/AC_REMOTE.vwf.vt
+quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Haresh/Desktop/VHDL-Project/simulation/qsim/ AC_REMOTE -c AC_REMOTE
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off AC_REMOTE -c AC_REMOTE --vector_source=C:/Users/Haresh/Desktop/VHDL-Project/AC_REMOTE.vwf --testbench_file=C:/Users/Haresh/Desktop/VHDL-Project/simulation/qsim/AC_REMOTE.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Haresh/Desktop/VHDL-Project/simulation/qsim/ AC_REMOTE -c AC_REMOTE
 
 
 
